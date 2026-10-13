@@ -14,9 +14,9 @@ Open `index.html` in een browser, of start in deze map `python3 -m http.server 4
 
 ## Functies
 
-- Parkselector met officiële EuroParcs-foto’s: Buitenhuizen en De Woudhoeve. Foto, regiotekst, activiteiten, routes, parklinks en eigen planning wisselen mee. Directe parklinks werken via `?park=buitenhuizen` en `?park=woudhoeve`, inclusief de terug-/vooruitknoppen van de browser.
+- Twee zichtbare parkknoppen met officiële EuroParcs-foto’s en groene selectiehighlight: Buitenhuizen en De Woudhoeve. Foto, regiotekst, activiteiten, routes, parklinks en eigen planning wisselen mee. Directe parklinks werken via `?park=buitenhuizen` en `?park=woudhoeve`, inclusief de terug-/vooruitknoppen van de browser.
 - Activiteiten met filters, zoeken, favorieten, verbergen en terugzetten.
-- Drie dagen met vrije activiteitenlijstjes. Voeg uitjes toe via de kaartknop. Versleep geplande blokken met het ⠿ handvat naar een andere dag of een andere positie. Met Verplaats kies je dezelfde dag/volgorde via knoppen (ook met toetsenbord of op telefoon). Verwijderen kan met het kruisje. Bestaande planningen met hoofdactiviteit/extra/regen worden automatisch overgezet zonder keuzes te verliezen.
+- Drie dagen met vrije activiteitenlijstjes. Voeg uitjes toe via de kaartknop. Het hele geplande blok is sleepbaar, behalve de titel en verwijderknop. De titel opent volledige activiteitinformatie. In de toevoegpopup kies je één of meerdere dagen met drie dagkaarten; er zijn geen dropdowns. Toetsenbord: focus een blok, spatie/Enter om op te pakken, pijlen om te verplaatsen, Enter om te bewaren, Escape om te annuleren. Verwijderen kan met het kruisje. Bestaande planningen met hoofdactiviteit/extra/regen worden automatisch overgezet zonder keuzes te verliezen.
 - Aanpasbare datums, regenmodus, reset met bevestiging en printweergave.
 - Keuzes worden per park opgeslagen in localStorage op dit apparaat en in deze browser. Bij geblokkeerde opslag verschijnt een waarschuwing. Geen synchronisatie tussen apparaten.
 

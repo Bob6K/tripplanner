@@ -6,15 +6,15 @@
   <meta name="theme-color" content="#254f41">
   <meta name="description" content="Ontdek gezinsuitjes rond EuroParcs Buitenhuizen en De Woudhoeve en maak je vakantieplanning.">
   <title>Even eropuit · Jouw vakantieplanner</title>
-  <link rel="stylesheet" href="styles.css?v=3">
-  <script src="data.js?v=3" defer></script>
-  <script src="app.js?v=3" defer></script>
+  <link rel="stylesheet" href="styles.css?v=4">
+  <script src="data.js?v=4" defer></script>
+  <script src="app.js?v=4" defer></script>
 </head>
 <body>
   <a class="skip" href="#activiteiten">Naar de activiteiten</a>
   <header class="header">
     <a class="brand" href="#"><span class="brand-icon" aria-hidden="true">↟</span><span>even eropuit<span class="brand-sub">kleine avonturen, grote herinneringen</span></span></a>
-    <div class="park-control"><img id="park-thumb" alt="EuroParcs Buitenhuizen" width="48" height="48"><div><label for="park">Jouw geselecteerde vakantiepark</label><select id="park"></select></div><span class="selected" aria-hidden="true">✓</span></div>
+    <nav id="park-buttons" class="park-buttons" aria-label="Kies je vakantiepark"></nav>
     <a class="header-plan" href="#planning">Mijn planning <span id="plan-count">0</span></a>
   </header>
   <main>
@@ -25,8 +25,8 @@
     <section class="planner section" id="planning" aria-labelledby="planner-title">
       <div class="section-heading"><div><p class="eyebrow">JULLIE VAKANTIE, JULLIE TEMPO</p><h2 id="planner-title">Drie dagen om naar uit te kijken.</h2><p>Jullie uitjes in een handig lijstje per dag. De rest mag vanzelf gaan.</p></div><div class="planner-tools"><button id="dates-button" class="button light">Datums aanpassen</button><button id="print" class="button light">Planning printen</button></div></div>
       <p id="trip-dates" class="small">Voorlopige dagen: 17, 18 en 19 · maand nog te kiezen</p>
-      <div id="days" class="days"></div>
-      <div class="planner-bottom"><p id="drag-help">Pak het ⠿ handvat om te verslepen, of kies Verplaats om een dag en plek te kiezen.</p><button id="reset" class="text-button">Planning resetten</button></div>
+      <p id="keyboard-help" class="sr-only">Toetsenbord: focus het blok en druk op spatie of Enter. Gebruik links en rechts voor een andere dag, omhoog en omlaag voor de volgorde. Enter om te bewaren, Escape om te annuleren.</p><div id="days" class="days"></div>
+      <div class="planner-bottom"><p id="drag-help">Sleep een blok naar een dag of een andere plek. Klik op de titel voor alle informatie.</p><button id="reset" class="text-button">Planning resetten</button></div>
     </section>
     <section id="activiteiten" class="section activities" aria-labelledby="activities-title">
       <div class="section-heading"><div><p class="eyebrow">VAN SPEELTUIN TOT SCHELPEN ZOEKEN</p><h2 id="activities-title">Waar hebben jullie zin in?</h2><p>Kies iets leuks en geef het een plekje in jullie planning.</p></div><button id="rain" class="rain-button" aria-pressed="false">🌧️ Regenweer</button></div>
@@ -42,8 +42,8 @@
   <footer><a class="brand" href="#">↟ even eropuit</a><p>Bewaar herinneringen. Wij bewaren je planning alleen in deze browser.</p><a id="reserve" target="_blank" rel="noopener">Verblijf boeken bij EuroParcs ↗</a></footer>
   <div id="toast" class="toast" role="status" hidden></div>
   <p id="storage-warning" class="storage-warning" role="alert" hidden>Je browser kan keuzes niet bewaren. Je kunt de planner gebruiken, maar keuzes verdwijnen na het sluiten of vernieuwen.</p>
-  <dialog id="add-dialog"><form id="add-form"><button type="button" class="close" data-close aria-label="Sluiten">×</button><p class="eyebrow">EEN PLEKJE IN JE VAKANTIE</p><h2 id="add-title">Uitje toevoegen</h2><label for="add-day">Welke dag?</label><select id="add-day"></select><button type="submit" class="button primary">Toevoegen aan planning</button></form></dialog>
-  <dialog id="move-dialog"><form id="move-form"><button type="button" class="close" data-close aria-label="Sluiten">×</button><p class="eyebrow">EEN ANDERE PLEK</p><h2 id="move-title">Activiteit verplaatsen</h2><label for="move-day">Naar welke dag?</label><select id="move-day"></select><label for="move-position">Waar in het lijstje?</label><select id="move-position"></select><button type="submit" class="button primary">Verplaatsen</button></form></dialog>
+  <dialog id="add-dialog"><form id="add-form"><button type="button" class="close" data-close aria-label="Sluiten">×</button><p class="eyebrow">EEN PLEKJE IN JE VAKANTIE</p><h2 id="add-title">Uitje toevoegen</h2><fieldset class="day-picker"><legend>Kies één of meer dagen</legend><div id="add-days" class="day-choices"></div></fieldset><p id="add-selection" class="small" role="status"></p><button type="submit" class="button primary">Toevoegen aan planning</button></form></dialog>
+  <dialog id="info-dialog" aria-labelledby="info-title"><button type="button" class="close" data-close aria-label="Sluiten">×</button><div id="activity-info"></div></dialog>
   <dialog id="hidden-dialog"><button type="button" class="close" data-close aria-label="Sluiten">×</button><p class="eyebrow">EVEN UIT BEELD</p><h2>Verborgen activiteiten</h2><p>Je kunt deze uitjes altijd terugzetten. Verbergen verwijdert ze niet uit je planning.</p><div id="hidden-list"></div></dialog>
   <dialog id="dates-dialog"><form id="dates-form"><button type="button" class="close" data-close aria-label="Sluiten">×</button><h2>Wanneer gaan jullie?</h2><p>Kies de eerste dag. De twee dagen erna vullen we voor je in.</p><label for="start-date">Eerste vakantiedag</label><input id="start-date" type="date" required><button class="button primary" type="submit">Datums bewaren</button><button class="text-button" id="dates-clear" type="button">Terug naar voorlopig 17–19</button></form></dialog>
   <dialog id="reset-dialog"><form id="reset-form"><h2>Planning leegmaken?</h2><p>De activiteiten verdwijnen uit de drie dagen. Je datums, favorieten en verborgen uitjes blijven bewaard.</p><div class="dialog-actions"><button type="button" class="button light" data-close>Annuleren</button><button type="submit" class="button primary">Ja, planning resetten</button></div></form></dialog>
