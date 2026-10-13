@@ -1,6 +1,6 @@
 # Even eropuit — Tripplanner
 
-Nederlandse, mobielvriendelijke gezinsplanner rond EuroParcs Buitenhuizen en EuroParcs De Woudhoeve. Statische HTML/CSS/JavaScript, zonder installatie, backend, API-sleutels of login.
+Nederlandse, mobielvriendelijke gezinsplanner rond EuroParcs Buitenhuizen, EuroParcs De Woudhoeve en Landal Strandpark Duynhille. Statische HTML/CSS/JavaScript, zonder installatie, backend, API-sleutels of login.
 
 ## Website
 
@@ -14,7 +14,7 @@ Open `index.html` in een browser, of start in deze map `python3 -m http.server 4
 
 ## Functies
 
-- Twee zichtbare parkknoppen met officiële EuroParcs-foto’s en groene selectiehighlight: Buitenhuizen en De Woudhoeve. Foto, regiotekst, activiteiten, routes, parklinks en eigen planning wisselen mee. Directe parklinks werken via `?park=buitenhuizen` en `?park=woudhoeve`, inclusief de terug-/vooruitknoppen van de browser.
+- Drie zichtbare parkknoppen met officiële parkfoto’s en groene selectiehighlight: Buitenhuizen, De Woudhoeve en Strandpark Duynhille. Foto, regiotekst, activiteiten, routes, parklinks en eigen planning wisselen mee. Directe parklinks werken via `?park=buitenhuizen` , `?park=woudhoeve` en `?park=duynhille`, inclusief de terug-/vooruitknoppen van de browser.
 - Activiteiten met filters, zoeken, favorieten, verbergen en terugzetten.
 - Drie dagen met vrije activiteitenlijstjes. Voeg uitjes toe via de kaartknop. Het hele geplande blok is sleepbaar, behalve de titel en verwijderknop. De titel opent volledige activiteitinformatie. In de toevoegpopup kies je één of meerdere dagen met drie dagkaarten; er zijn geen dropdowns. Toetsenbord: focus een blok, spatie/Enter om op te pakken, pijlen om te verplaatsen, Enter om te bewaren, Escape om te annuleren. Verwijderen kan met het kruisje. Bestaande planningen met hoofdactiviteit/extra/regen worden automatisch overgezet zonder keuzes te verliezen.
 - Aanpasbare datums, regenmodus, reset met bevestiging en printweergave.
@@ -22,7 +22,7 @@ Open `index.html` in een browser, of start in deze map `python3 -m http.server 4
 
 ## Gegevens bijwerken
 
-`data.js` bevat parken en hun eigen activiteiten. Voeg een park toe aan `TRIP_DATA.parks` met unieke `id`, `name`, `address`, `thumbnail`, `website`, `bookingUrl`, `facilities`, `region`, `intro`, `parkNote` en `activities`. Activiteiten hebben unieke IDs binnen het park. De interface gebruikt de geselecteerde parkgegevens voor routes en opslag.
+`data.js` bevat parken en hun eigen activiteiten. Voeg een park toe aan `TRIP_DATA.parks` met unieke `id`, `brand`, `name`, `address`, `thumbnail`, `website`, `bookingUrl`, `facilities`, `region`, `intro`, `parkNote` en `activities`. Activiteiten hebben unieke IDs binnen het park. De interface gebruikt de geselecteerde parkgegevens voor routes en opslag.
 
 Bronnen zijn gekoppeld per activiteit. Controle uitgevoerd op 14 oktober 2026. Rijtijden, bezoekduur en leeftijdstips zijn indicaties/redactionele inschattingen, geen live routeberekening of garantie. Activiteiten met een bovengrens boven 20 minuten krijgen de markering “Iets verder weg”. Entreeprijzen zijn niet overgenomen.
 
@@ -55,3 +55,15 @@ Parkbron: https://www.europarcsdewoudhoeve.nl/faciliteiten. Officiële detailpag
 Omgeving: Zee Aquarium Bergen aan Zee, De Batavier, strand Egmond aan Zee, Slot op den Hoef, Museum Kranenburgh, De Hoep en een kort duinrondje vanaf ’t Woud. Officiële bezoek-/bronlinks staan per kaart. Bij De Batavier geen vast rooster overgenomen omdat de homepage een losse openingsdatum toont. Duinen: vanaf 18 jaar PWN-duinkaart vereist.
 
 Parkfoto: https://cdn-cms.bookingexperts.com/media/3701/47/optimized.jpg — afkomstig van https://www.europarcs.nl/vakantieparken/de-woudhoeve. Datum van controle: 14 oktober 2026.
+
+## Strandpark Duynhille
+
+Directe link: https://bob6k.github.io/tripplanner/?park=duynhille
+
+13 ideeën: 6 op het park en 7 in de omgeving voor kinderen van 4–7. Indicatieve autoritten maximaal 20 minuten bij normaal verkeer; geen live routeberekening. Strand op circa 700 meter is ook te voet bereikbaar. Bestaande opslag blijft intact en Duynhille krijgt een eigen planning.
+
+Parkbron: https://www.landal.nl/parken/strandpark-duynhille/op-en-rond-het-park. Speeltuin, luchttrampoline, DIY-activiteiten, beachvolleybal, jeu de boules en fietsverhuur bevestigd. Geen kinderfiets-/zitjesbeschikbaarheid of begeleid kinderprogramma aangenomen. Geen eigen zwembad vermeld; de gratis zwemlocatie Kamperland ligt circa 40 minuten weg en is niet opgenomen. Aqua Mundo Port Zélande vraagt een apart dagticket.
+
+Omgeving: De Mèkkerstee, De Flipjes, strand Westerduinen, RTM-tram, A Seal, Aqua Mundo Port Zélande en minigolf bij Houten Kaap (een ander park). Openingstijden en seizoensbeperkingen staan per activiteit, met officiële bronlink. De Flipjes zondag gesloten; RTM alleen op rijdagen.
+
+Parkfoto van de officiële Landal-pagina: https://mss-p-014-delivery.stylelabs.cloud/api/public/content/9511047-3x2?t=w1280. Extern geladen. Controle: 14 oktober 2026.

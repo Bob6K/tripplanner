@@ -60,8 +60,8 @@
   const drive=a=>a.onPark?'Op het park':`ca. ${a.travel[0]}–${a.travel[1]} min rijden`;
   const cost=a=>({free:'Gratis',paid:'Betaald',included:'Inbegrepen voor parkgasten',unknown:'Kosten navragen'}[a.cost]);
   function renderPark(){
-    $('park-buttons').innerHTML=parks.map(p=>`<button class="park-button" data-park="${escape(p.id)}" aria-pressed="${p.id===park.id}"><img src="${escape(p.thumbnail)}" alt="" width="54" height="54"><span class="park-button-copy"><small>EuroParcs</small><strong>${escape(p.name.replace(/^EuroParcs /,''))}</strong><span>${escape(p.location)}</span></span><span class="park-tick" aria-hidden="true">${p.id===park.id?'✓':''}</span></button>`).join('');
-    $('hero-image').src=park.thumbnail;$('hero-image').alt=park.name+' tussen het groen';$('hero-park').textContent=park.name;
+    $('park-buttons').innerHTML=parks.map(p=>`<button class="park-button" data-park="${escape(p.id)}" aria-pressed="${p.id===park.id}"><img src="${escape(p.thumbnail)}" alt="" width="54" height="54"><span class="park-button-copy"><small>${escape(p.brand)}</small><strong>${escape(p.name.replace(p.brand+' ',''))}</strong><span>${escape(p.location)}</span></span><span class="park-tick" aria-hidden="true">${p.id===park.id?'✓':''}</span></button>`).join('');
+    $('hero-image').src=park.thumbnail;$('hero-image').alt=park.name;$('hero-park').textContent=park.name;$('photo-credit').textContent='Foto: '+park.brand;$('reserve').textContent='Verblijf boeken bij '+park.brand+' ↗';
     $('booking').href=park.website;$('reserve').href=park.bookingUrl;$('park-source').href=park.facilities;
     $('hero-region').textContent=park.region.toLocaleUpperCase('nl');$('hero-intro').textContent=park.intro;$('park-note').textContent=park.parkNote;
     document.title=`${park.name} · Even eropuit`;

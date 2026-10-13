@@ -2,7 +2,7 @@
    travel = indicatie in minuten; ages / duration / family = redactionele inschatting.
    Voeg parken toe met een eigen activities-array; persoonlijke keuzes zijn per park gescheiden. */
 window.TRIP_DATA = {checked:'2026-10-14', parks:[{
-  id:'buitenhuizen', name:'EuroParcs Buitenhuizen', location:'Velsen-Zuid',
+  id:'buitenhuizen', brand:'EuroParcs', name:'EuroParcs Buitenhuizen', location:'Velsen-Zuid',
   region:'Velsen-Zuid & omgeving', intro:'Een boerderij om de hoek. Zand tussen je tenen. Of gewoon nog even spelen op het park.',
   parkNote:'Op Buitenhuizen vermeldt de officiële faciliteitenpagina een buitenzwembad; een binnenzwembad of grote binnenspeeltuin wordt er niet vermeld. Voor regen vind je hier alternatieven in de buurt.',
   address:'EuroParcs Buitenhuizen, Buitenhuizerweg 2, 1981 LK Velsen-Zuid',
@@ -66,7 +66,7 @@ window.TRIP_DATA = {checked:'2026-10-14', parks:[{
 }]};
 
 window.TRIP_DATA.parks.push({
-  id:'woudhoeve', name:'EuroParcs De Woudhoeve', location:'Egmond aan den Hoef',
+  id:'woudhoeve', brand:'EuroParcs', name:'EuroParcs De Woudhoeve', location:'Egmond aan den Hoef',
   region:'Egmond, Bergen & omgeving',
   intro:'Vissen bewonderen in het aquarium. Schelpen zoeken aan zee. Of lekker spelen en zwemmen op je vakantiepark.',
   parkNote:'De Woudhoeve heeft een verwarmd buitenzwembad met peuter-/kleuterbad en een recreatieplas. Het zwembad is seizoensgebonden en sluit volgens EuroParcs vanaf september. Er is geen animatieteam; wel worden Yuki’s speurtocht en een knutselpakket genoemd. Een binnenzwembad wordt niet vermeld.',
@@ -108,5 +108,294 @@ window.TRIP_DATA.parks.push({
      description:'Samen op zoek met Yuki. Een eenvoudige activiteit dicht bij jullie huisje.',family:'Voor 4: samen kijken en aanwijzen. Voor 7: meehelpen met zoeken en opdrachten.',opening:'Vraag bij de receptie naar de speurtocht, kosten en beschikbaarheid.',warning:'Er is geen animatieteam aanwezig. Dit is een activiteit die je samen zelf doet.',url:'https://www.europarcsdewoudhoeve.nl/omgeving/animatie'},
     {id:'park-knutselen',name:'Knutselen in het huisje',icon:'✂️',color:'#e9dfe9',location:'Eigen accommodatie, De Woudhoeve',travel:[0,0],ages:'4–7 jaar, met begeleiding',setting:'indoor',cost:'unknown',duration:'30–60 minuten',onPark:true,rain:true,
      description:'Een rustig binnenmoment met het knutselpakket dat EuroParcs voor dit park noemt.',family:'Laat ieder kind op eigen niveau tekenen, knippen en maken.',opening:'Vraag de receptie naar inhoud, kosten en beschikbaarheid van het pakket.',warning:'Geen begeleid animatieprogramma of binnenspeeltuin. Gebruik het pakket samen in de accommodatie.',url:'https://www.europarcsdewoudhoeve.nl/omgeving/animatie'}
+  ]
+});
+
+window.TRIP_DATA.parks.push({
+  "id": "duynhille",
+  "brand": "Landal",
+  "name": "Landal Strandpark Duynhille",
+  "location": "Ouddorp",
+  "region": "Ouddorp & de Brouwersdam",
+  "intro": "Duinen voor de deur. Schelpen in je jaszak. En samen op pad tussen strand, dieren en historische trams.",
+  "parkNote": "Landal vermeldt een speeltuin, luchttrampoline en do-it-yourself-activiteiten. Er is geen zwembad op het park vermeld. Gratis zwemmen voor gasten kan bij Beach Resort Kamperland, op circa 40 minuten rijden; dat valt buiten deze selectie. Aqua Mundo Port Zélande is een apart betaald uitje.",
+  "address": "Strandpark Duynhille, Oude Nieuwlandseweg 11 B, 3253 LL Ouddorp",
+  "thumbnail": "https://mss-p-014-delivery.stylelabs.cloud/api/public/content/9511047-3x2?t=w1280",
+  "website": "https://www.landal.nl/parken/strandpark-duynhille/",
+  "bookingUrl": "https://www.landal.nl/parken/strandpark-duynhille/",
+  "facilities": "https://www.landal.nl/parken/strandpark-duynhille/op-en-rond-het-park",
+  "activities": [
+    {
+      "id": "mekkerstee",
+      "name": "De Mèkkerstee",
+      "icon": "🐐",
+      "color": "#e5ead7",
+      "location": "De Mèkkerstee, Hofdijksweg 34, Ouddorp",
+      "travel": [
+        5,
+        10
+      ],
+      "ages": "4–7 jaar, met begeleiding",
+      "setting": "mixed",
+      "cost": "free",
+      "duration": "1½–2 uur",
+      "description": "Geiten en andere boerderijdieren bekijken, met een speeltuin voor buiten.",
+      "family": "Voor 4: dieren aanwijzen. Voor 7: ontdekken waar geitenkaas vandaan komt.",
+      "opening": "Di–za 09:00–17:00; in de zomervakantie ook maandag. Zondag en feestdagen gesloten; check afwijkingen.",
+      "url": "https://www.demekkerstee.nl/nl/speelboerderij-zuid-holland/",
+      "top": true,
+      "warning": "De speeltuin is buiten. Niet het hele uitje is geschikt voor regen.",
+      "rulesUrl": "https://www.demekkerstee.nl/nl/openingstijden-contact/"
+    },
+    {
+      "id": "flipjes",
+      "name": "Speeltuin De Flipjes",
+      "icon": "🛝",
+      "color": "#efe0d4",
+      "location": "Speeltuin De Flipjes, Prins Hendrikweg 36, Ouddorp",
+      "travel": [
+        5,
+        10
+      ],
+      "ages": "4–7 jaar, met begeleiding",
+      "setting": "outdoor",
+      "cost": "paid",
+      "duration": "1½–3 uur",
+      "description": "Schommels, trampolines, wippen en een grote zandbak: een middag lekker buitenspelen.",
+      "family": "Voor 4: samen naar de zandbak. Voor 7: verschillende speeltoestellen uitproberen.",
+      "opening": "Seizoensrooster; in het najaar beperkte dagen en middagen. Op zondag altijd gesloten.",
+      "url": "https://speeltuindeflipjes.nl/informatie/",
+      "top": true,
+      "warning": "Controleer het rooster voor de bezoekdatum; dit is geen dagelijks geopende speeltuin."
+    },
+    {
+      "id": "strand",
+      "name": "Strand bij de Westerduinen",
+      "icon": "🐚",
+      "color": "#f0e7ce",
+      "location": "Strandopgang Westerduinpad, Ouddorp",
+      "travel": [
+        0,
+        5
+      ],
+      "ages": "4–7 jaar, met begeleiding",
+      "setting": "outdoor",
+      "cost": "free",
+      "duration": "1–3 uur",
+      "description": "Schelpen zoeken en zandkastelen bouwen. Landal noemt het strand op ongeveer 700 meter van het park.",
+      "family": "Voor beide kinderen: een zanddorp bouwen of een schelpenschat verzamelen.",
+      "opening": "Geen regulier toegangsrooster. Bekijk het weer en de strandvlaggen.",
+      "url": "https://www.landal.nl/parken/strandpark-duynhille/op-en-rond-het-park",
+      "top": true,
+      "warning": "Meestal handig te voet: reken circa 10–15 minuten, afhankelijk van je huisje. Blijf bij kinderen aan zee; parkeren kan geld kosten."
+    },
+    {
+      "id": "rtm",
+      "name": "Een rit met de RTM-tram",
+      "icon": "🚃",
+      "color": "#e9e0cf",
+      "location": "RTM Ouddorp, G.C. Schellingerweg 2, Ouddorp",
+      "travel": [
+        10,
+        15
+      ],
+      "ages": "4–7 jaar, met begeleiding",
+      "setting": "mixed",
+      "cost": "paid",
+      "duration": "2–3 uur",
+      "description": "Rijd met een historische tram over de Brouwersdam en bezoek het trammuseum.",
+      "family": "Voor 4: samen uit het raam kijken. Voor 7: oude trams en techniek ontdekken.",
+      "opening": "Alleen op rijdagen volgens de actuele kalender. Museum op rijdagen 10:00–17:00; een retourrit duurt ongeveer een uur.",
+      "url": "https://rtm-ouddorp.nl/en/visit/",
+      "top": true,
+      "warning": "Bekijk vooraf rijdagen en vertrektijden. Stoom- of dieseltractie verschilt per rit; buiten de rijdagen is het museum gesloten."
+    },
+    {
+      "id": "a-seal",
+      "name": "Zeehondenopvang A Seal",
+      "icon": "🦭",
+      "color": "#dcebed",
+      "location": "A Seal, Haringvlietplein 3 A, Stellendam",
+      "travel": [
+        15,
+        20
+      ],
+      "ages": "4–7 jaar, met begeleiding",
+      "setting": "mixed",
+      "cost": "paid",
+      "duration": "1–2 uur",
+      "description": "Ontdek hoe zieke en jonge zeehonden worden verzorgd en leer meer over hun leefgebied.",
+      "family": "Voor 4: samen de dieren bekijken. Voor 7: volgen hoe opvang en herstel werken.",
+      "opening": "Openingstijden wisselen per seizoen en schoolvakantie. Controleer de bezoekpagina.",
+      "url": "https://www.aseal.nl/bezoek-ons/",
+      "top": true,
+      "rain": true,
+      "warning": "Het bezoekerscentrum is binnen, de zeehondenverblijven zijn buiten. Het aantal dieren wisselt; vrijlatingen zijn geen vast programma."
+    },
+    {
+      "id": "aqua-mundo",
+      "name": "Aqua Mundo Port Zélande",
+      "icon": "💦",
+      "color": "#dcebed",
+      "location": "Center Parcs Port Zélande, Port Zélande 2, Ouddorp",
+      "travel": [
+        15,
+        20
+      ],
+      "ages": "4–7 jaar, met begeleiding",
+      "setting": "indoor",
+      "cost": "paid",
+      "duration": "2–3 uur",
+      "description": "Een subtropisch zwemuitje met kinderbad en Water Playhouse. Ook te bezoeken met een apart dagticket.",
+      "family": "Voor 4: samen rustig spetteren. Voor 7: zwemmen op eigen niveau.",
+      "opening": "Boek een dagticket voor een beschikbare datum en controleer de toegangs- en zwemtijden.",
+      "url": "https://www.centerparcs.nl/nl-nl/nederland/fp_PZ_vakantiepark-port-zelande/dagticket",
+      "rain": true,
+      "warning": "Niet inbegrepen bij Duynhille. Controleer leeftijds-/lengteregels per attractie en zwemregels; begeleiding blijft nodig."
+    },
+    {
+      "id": "houten-kaap",
+      "name": "Minigolf bij Houten Kaap",
+      "icon": "⛳",
+      "color": "#e1e9d4",
+      "location": "Strandtheater Houten Kaap, Westerweg 28, Ouddorp",
+      "travel": [
+        5,
+        10
+      ],
+      "ages": "4–7 jaar, met begeleiding",
+      "setting": "outdoor",
+      "cost": "paid",
+      "duration": "45–90 minuten",
+      "description": "Samen een balletje slaan op de minigolfbaan bij Ouddorp Duin. Materiaal huur je bij De Houten Aap.",
+      "family": "Voor 4: rustig rollen en mikken. Voor 7: een kleine wedstrijd zonder haast.",
+      "opening": "Vraag De Houten Aap naar de actuele verhuurtijden en beschikbaarheid.",
+      "url": "https://www.houtenkaap.nl/info",
+      "warning": "Dit ligt bij een ander park, niet op Duynhille. Vraag vooraf naar kosten en een passende stick voor de jongste."
+    },
+    {
+      "id": "park-playground",
+      "name": "Spelen op het park",
+      "icon": "🛝",
+      "color": "#e6ead5",
+      "location": "Strandpark Duynhille",
+      "travel": [
+        0,
+        0
+      ],
+      "ages": "4–7 jaar, met begeleiding",
+      "setting": "outdoor",
+      "cost": "included",
+      "duration": "30–60 minuten",
+      "description": "Even naar de speeltuin, dicht bij jullie vakantiehuis.",
+      "family": "Voor beide kinderen: lekker klimmen en spelen op eigen niveau.",
+      "opening": "Vraag bij aankomst naar de locatie en gebruiksregels.",
+      "url": "https://www.landal.nl/parken/strandpark-duynhille/op-en-rond-het-park",
+      "onPark": true
+    },
+    {
+      "id": "park-airtrampoline",
+      "name": "Springen op de luchttrampoline",
+      "icon": "🦘",
+      "color": "#eadccf",
+      "location": "Strandpark Duynhille",
+      "travel": [
+        0,
+        0
+      ],
+      "ages": "4–7 jaar, met begeleiding",
+      "setting": "outdoor",
+      "cost": "included",
+      "duration": "20–40 minuten",
+      "description": "Een korte springpauze op de luchttrampoline van het park.",
+      "family": "Laat de jongste rustig beginnen en houd rekening met grotere kinderen.",
+      "opening": "Afhankelijk van weer en gebruiksregels op het park.",
+      "url": "https://www.landal.nl/parken/strandpark-duynhille/op-en-rond-het-park",
+      "onPark": true,
+      "warning": "Controleer ter plaatse leeftijden en opening; bij slecht weer kan de trampoline gesloten zijn."
+    },
+    {
+      "id": "park-diy",
+      "name": "Zelf op avontuur",
+      "icon": "🔎",
+      "color": "#e9dfe9",
+      "location": "Strandpark Duynhille",
+      "travel": [
+        0,
+        0
+      ],
+      "ages": "4–7 jaar, met begeleiding",
+      "setting": "mixed",
+      "cost": "unknown",
+      "duration": "30–60 minuten",
+      "description": "Landal biedt do-it-yourself-activiteiten; kies samen iets uit het actuele aanbod.",
+      "family": "Kies opdrachten die passen bij beide kinderen en doe ze samen.",
+      "opening": "Het hele jaar aanbod via de Landal-app; beschikbaarheid en eventuele kosten verschillen.",
+      "url": "https://www.landal.nl/parken/strandpark-duynhille/op-en-rond-het-park",
+      "onPark": true,
+      "warning": "Geen gegarandeerd dagelijks begeleid kinderprogramma. Vraag welke activiteiten binnen kunnen."
+    },
+    {
+      "id": "park-boules",
+      "name": "Jeu de boules voor het gezin",
+      "icon": "🎯",
+      "color": "#eae5d4",
+      "location": "Strandpark Duynhille",
+      "travel": [
+        0,
+        0
+      ],
+      "ages": "4–7 jaar, met begeleiding",
+      "setting": "outdoor",
+      "cost": "included",
+      "duration": "20–45 minuten",
+      "description": "Samen mikken op de jeu-de-boulesbaan. Hou de spelregels eenvoudig.",
+      "family": "Voor 4: een korte mikafstand. Voor 7: kijken wie het dichtstbij komt.",
+      "opening": "Vraag de receptie naar gebruikstijden en materiaal.",
+      "url": "https://www.landal.nl/parken/strandpark-duynhille/op-en-rond-het-park",
+      "onPark": true,
+      "warning": "Leenmateriaal is niet bevestigd; vraag om lichte ballen die geschikt zijn voor kinderen."
+    },
+    {
+      "id": "park-volleyball",
+      "name": "Balspel op het beachvolleybalveld",
+      "icon": "🏐",
+      "color": "#dce7d8",
+      "location": "Strandpark Duynhille",
+      "travel": [
+        0,
+        0
+      ],
+      "ages": "4–7 jaar, met begeleiding",
+      "setting": "outdoor",
+      "cost": "included",
+      "duration": "20–45 minuten",
+      "description": "Een eenvoudig gezinsbalspel op het beachvolleybalveld.",
+      "family": "Laat het net geen hindernis zijn: rollen, gooien en vangen kan ook.",
+      "opening": "Volg de regels op het park en neem een eigen zachte bal mee.",
+      "url": "https://www.landal.nl/parken/strandpark-duynhille/op-en-rond-het-park",
+      "onPark": true
+    },
+    {
+      "id": "park-bike",
+      "name": "Een kort fietsrondje",
+      "icon": "🚲",
+      "color": "#dfe8df",
+      "location": "Fietsverhuur, Strandpark Duynhille",
+      "travel": [
+        0,
+        0
+      ],
+      "ages": "4–7 jaar, met begeleiding",
+      "setting": "outdoor",
+      "cost": "paid",
+      "duration": "1–2 uur",
+      "description": "Huur fietsen op het park en kies samen een kort rondje in de omgeving.",
+      "family": "Kies een passende fiets of een geschikt zitje en houd de route kort.",
+      "opening": "Vraag vooraf naar opening, reservering en beschikbaarheid.",
+      "url": "https://www.landal.nl/parken/strandpark-duynhille/op-en-rond-het-park",
+      "onPark": true,
+      "warning": "Kinderfietsen, maten en kinderzitjes zijn niet bevestigd op de faciliteitenpagina; regel vooraf een passende oplossing."
+    }
   ]
 });
