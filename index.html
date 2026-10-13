@@ -1,0 +1,51 @@
+<!doctype html>
+<html lang="nl">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#254f41">
+  <meta name="description" content="Ontdek gezinsuitjes rond EuroParcs Buitenhuizen en maak een ontspannen driedagenplanning. Met favorieten, regenopties en routes.">
+  <title>Even eropuit · Jouw vakantieplanner</title>
+  <link rel="stylesheet" href="styles.css">
+  <script src="data.js" defer></script>
+  <script src="app.js" defer></script>
+</head>
+<body>
+  <a class="skip" href="#activiteiten">Naar de activiteiten</a>
+  <header class="header">
+    <a class="brand" href="#"><span class="brand-icon" aria-hidden="true">↟</span><span>even eropuit<span class="brand-sub">kleine avonturen, grote herinneringen</span></span></a>
+    <div class="park-control"><img id="park-thumb" alt="EuroParcs Buitenhuizen" width="48" height="48"><div><label for="park">Jouw geselecteerde vakantiepark</label><select id="park"></select></div><span class="selected" aria-hidden="true">✓</span></div>
+    <a class="header-plan" href="#planning">Mijn planning <span id="plan-count">0</span></a>
+  </header>
+  <main>
+    <section class="hero" aria-labelledby="hero-title">
+      <div class="hero-copy"><p class="eyebrow">VELSEN-ZUID & OMGEVING</p><h1 id="hero-title">Alle ruimte voor<br><em>samen op avontuur.</em></h1><p>Een boerderij om de hoek. Zand tussen je tenen.<br class="desktop"> Of gewoon nog even spelen op het park.</p><p class="hero-small">Leuke ideeën voor kinderen van 4 en 7, met genoeg tijd voor niets.</p><div class="hero-actions"><a class="button primary" href="#activiteiten">Ontdek de uitjes <span aria-hidden="true">↓</span></a><a class="button light" id="booking" target="_blank" rel="noopener">Bekijk het park ↗</a></div><div class="hero-notes"><span>☀ 3 dagen vakantie</span><span>♡ Voor 4 & 7 jaar</span><span>↗ Dicht bij je park</span></div></div>
+      <div class="hero-photo"><img id="hero-image" alt="EuroParcs Buitenhuizen tussen het groen" fetchpriority="high"><div class="photo-note"><span>↟</span><div>Hier begint jullie vakantie<small id="hero-park">EuroParcs Buitenhuizen</small></div></div><span class="photo-credit">Foto: EuroParcs</span></div>
+    </section>
+    <section class="planner section" id="planning" aria-labelledby="planner-title">
+      <div class="section-heading"><div><p class="eyebrow">JULLIE VAKANTIE, JULLIE TEMPO</p><h2 id="planner-title">Drie dagen om naar uit te kijken.</h2><p>Eén groot uitje is vaak al genoeg. De rest mag vanzelf gaan.</p></div><div class="planner-tools"><button id="dates-button" class="button light">Datums aanpassen</button><button id="print" class="button light">Planning printen</button></div></div>
+      <p id="trip-dates" class="small">Voorlopige dagen: 17, 18 en 19 · maand nog te kiezen</p>
+      <div id="days" class="days"></div>
+      <div class="planner-bottom"><p>☁ Een regenbackup telt niet als extra uitje. Die is er voor als het weer omslaat.</p><button id="reset" class="text-button">Planning resetten</button></div>
+    </section>
+    <section id="activiteiten" class="section activities" aria-labelledby="activities-title">
+      <div class="section-heading"><div><p class="eyebrow">VAN SPEELTUIN TOT SCHELPEN ZOEKEN</p><h2 id="activities-title">Waar hebben jullie zin in?</h2><p>Kies iets leuks en geef het een plekje in jullie planning.</p></div><button id="rain" class="rain-button" aria-pressed="false">🌧️ Regenweer</button></div>
+      <div class="browse-tools"><label class="search">⌕ <input id="search" type="search" placeholder="Zoek een uitje of plaats…" aria-label="Zoek een uitje of plaats"></label><button id="hidden-button" class="text-button">Verborgen activiteiten <span id="hidden-count">0</span></button></div>
+      <div id="filters" class="filters" role="group" aria-label="Filter activiteiten"></div>
+      <div class="results-line"><p id="results" role="status"></p><p class="small">Rijtijden zijn indicaties vanaf je park · check de route voor vertrek</p></div>
+      <p id="rain-note" class="notice" hidden>Regenweer aan: binnenactiviteiten staan vooraan. Buitenuitjes blijven beschikbaar en worden gedimd.</p>
+      <div id="cards" class="cards"></div>
+      <div id="empty" class="empty" hidden><span aria-hidden="true">⌕</span><h3>Even verder kijken?</h3><p>Er passen geen uitjes bij deze zoekopdracht of dit filter.</p><button class="button primary" id="clear-filters">Toon alle uitjes</button></div>
+    </section>
+    <section class="info section"><div class="info-mark" aria-hidden="true">↟</div><div><h2>Een beetje plannen. Vooral genieten.</h2><p>Deze selectie is gemaakt voor gezinnen met kinderen van 4 en 7 jaar. Leeftijdstips en bezoekduur zijn onze inschatting. Openingstijden, aanbod en beschikbaarheid kunnen veranderen: bekijk voor vertrek de officiële website bij het uitje.</p><p>Op Buitenhuizen vermeldt de officiële faciliteitenpagina een buitenzwembad; een binnenzwembad of grote binnenspeeltuin wordt er niet vermeld. Voor regen vind je hier alternatieven in de buurt.</p><p class="small">Bronnen gecontroleerd op 14 oktober 2026 · <a id="park-source" target="_blank" rel="noopener">Officiële parkfaciliteiten ↗</a></p></div></section>
+  </main>
+  <footer><a class="brand" href="#">↟ even eropuit</a><p>Bewaar herinneringen. Wij bewaren je planning alleen in deze browser.</p><a id="reserve" target="_blank" rel="noopener">Verblijf boeken bij EuroParcs ↗</a></footer>
+  <div id="toast" class="toast" role="status" hidden></div>
+  <p id="storage-warning" class="storage-warning" role="alert" hidden>Je browser kan keuzes niet bewaren. Je kunt de planner gebruiken, maar keuzes verdwijnen na het sluiten of vernieuwen.</p>
+  <dialog id="add-dialog"><form id="add-form"><button type="button" class="close" data-close aria-label="Sluiten">×</button><p class="eyebrow">EEN PLEKJE IN JE VAKANTIE</p><h2 id="add-title">Uitje toevoegen</h2><label for="add-day">Welke dag?</label><select id="add-day"></select><label for="add-slot">Wat voor uitje?</label><select id="add-slot"><option value="main">Hoofdactiviteit</option><option value="extra">Kleine extra</option><option value="rain">Regenbackup</option></select><p id="replace-note" class="notice" hidden></p><p id="backup-note" class="notice" hidden>Dit is een buitenactiviteit. Kies bij voorkeur een binnenactiviteit als regenbackup.</p><button type="submit" class="button primary">Toevoegen aan planning</button></form></dialog>
+  <dialog id="hidden-dialog"><button type="button" class="close" data-close aria-label="Sluiten">×</button><p class="eyebrow">EVEN UIT BEELD</p><h2>Verborgen activiteiten</h2><p>Je kunt deze uitjes altijd terugzetten. Verbergen verwijdert ze niet uit je planning.</p><div id="hidden-list"></div></dialog>
+  <dialog id="dates-dialog"><form id="dates-form"><button type="button" class="close" data-close aria-label="Sluiten">×</button><h2>Wanneer gaan jullie?</h2><p>Kies de eerste dag. De twee dagen erna vullen we voor je in.</p><label for="start-date">Eerste vakantiedag</label><input id="start-date" type="date" required><button class="button primary" type="submit">Datums bewaren</button><button class="text-button" id="dates-clear" type="button">Terug naar voorlopig 17–19</button></form></dialog>
+  <dialog id="reset-dialog"><form id="reset-form"><h2>Planning leegmaken?</h2><p>De activiteiten verdwijnen uit de drie dagen. Je datums, favorieten en verborgen uitjes blijven bewaard.</p><div class="dialog-actions"><button type="button" class="button light" data-close>Annuleren</button><button type="submit" class="button primary">Ja, planning resetten</button></div></form></dialog>
+  <noscript><p class="notice">Zet JavaScript aan om activiteiten te bekijken en je planning te maken.</p></noscript>
+</body>
+</html>
