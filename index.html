@@ -4,11 +4,11 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="theme-color" content="#254f41">
-  <meta name="description" content="Ontdek gezinsuitjes rond EuroParcs Buitenhuizen en maak een ontspannen driedagenplanning. Met favorieten, regenopties en routes.">
+  <meta name="description" content="Ontdek gezinsuitjes rond EuroParcs Buitenhuizen en De Woudhoeve en maak je vakantieplanning.">
   <title>Even eropuit · Jouw vakantieplanner</title>
-  <link rel="stylesheet" href="styles.css?v=2">
-  <script src="data.js" defer></script>
-  <script src="app.js?v=2" defer></script>
+  <link rel="stylesheet" href="styles.css?v=3">
+  <script src="data.js?v=3" defer></script>
+  <script src="app.js?v=3" defer></script>
 </head>
 <body>
   <a class="skip" href="#activiteiten">Naar de activiteiten</a>
@@ -19,7 +19,7 @@
   </header>
   <main>
     <section class="hero" aria-labelledby="hero-title">
-      <div class="hero-copy"><p class="eyebrow">VELSEN-ZUID & OMGEVING</p><h1 id="hero-title">Alle ruimte voor<br><em>samen op avontuur.</em></h1><p>Een boerderij om de hoek. Zand tussen je tenen.<br class="desktop"> Of gewoon nog even spelen op het park.</p><p class="hero-small">Leuke ideeën voor kinderen van 4 en 7, met genoeg tijd voor niets.</p><div class="hero-actions"><a class="button primary" href="#activiteiten">Ontdek de uitjes <span aria-hidden="true">↓</span></a><a class="button light" id="booking" target="_blank" rel="noopener">Bekijk het park ↗</a></div><div class="hero-notes"><span>☀ 3 dagen vakantie</span><span>♡ Voor 4 & 7 jaar</span><span>↗ Dicht bij je park</span></div></div>
+      <div class="hero-copy"><p class="eyebrow" id="hero-region">VELSEN-ZUID & OMGEVING</p><h1 id="hero-title">Alle ruimte voor<br><em>samen op avontuur.</em></h1><p id="hero-intro">Een boerderij om de hoek. Zand tussen je tenen. Of gewoon nog even spelen op het park.</p><p class="hero-small">Leuke ideeën voor kinderen van 4 en 7, met genoeg tijd voor niets.</p><div class="hero-actions"><a class="button primary" href="#activiteiten">Ontdek de uitjes <span aria-hidden="true">↓</span></a><a class="button light" id="booking" target="_blank" rel="noopener">Bekijk het park ↗</a></div><div class="hero-notes"><span>☀ 3 dagen vakantie</span><span>♡ Voor 4 & 7 jaar</span><span>↗ Dicht bij je park</span></div></div>
       <div class="hero-photo"><img id="hero-image" alt="EuroParcs Buitenhuizen tussen het groen" fetchpriority="high"><div class="photo-note"><span>↟</span><div>Hier begint jullie vakantie<small id="hero-park">EuroParcs Buitenhuizen</small></div></div><span class="photo-credit">Foto: EuroParcs</span></div>
     </section>
     <section class="planner section" id="planning" aria-labelledby="planner-title">
@@ -37,7 +37,7 @@
       <div id="cards" class="cards"></div>
       <div id="empty" class="empty" hidden><span aria-hidden="true">⌕</span><h3>Even verder kijken?</h3><p>Er passen geen uitjes bij deze zoekopdracht of dit filter.</p><button class="button primary" id="clear-filters">Toon alle uitjes</button></div>
     </section>
-    <section class="info section"><div class="info-mark" aria-hidden="true">↟</div><div><h2>Een beetje plannen. Vooral genieten.</h2><p>Deze selectie is gemaakt voor gezinnen met kinderen van 4 en 7 jaar. Leeftijdstips en bezoekduur zijn onze inschatting. Openingstijden, aanbod en beschikbaarheid kunnen veranderen: bekijk voor vertrek de officiële website bij het uitje.</p><p>Op Buitenhuizen vermeldt de officiële faciliteitenpagina een buitenzwembad; een binnenzwembad of grote binnenspeeltuin wordt er niet vermeld. Voor regen vind je hier alternatieven in de buurt.</p><p class="small">Bronnen gecontroleerd op 14 oktober 2026 · <a id="park-source" target="_blank" rel="noopener">Officiële parkfaciliteiten ↗</a></p></div></section>
+    <section class="info section"><div class="info-mark" aria-hidden="true">↟</div><div><h2>Een beetje plannen. Vooral genieten.</h2><p>Deze selectie is gemaakt voor gezinnen met kinderen van 4 en 7 jaar. Leeftijdstips en bezoekduur zijn onze inschatting. Openingstijden, aanbod en beschikbaarheid kunnen veranderen: bekijk voor vertrek de officiële website bij het uitje.</p><p id="park-note">Op Buitenhuizen vermeldt de officiële faciliteitenpagina een buitenzwembad; een binnenzwembad of grote binnenspeeltuin wordt er niet vermeld. Voor regen vind je hier alternatieven in de buurt.</p><p class="small">Bronnen gecontroleerd op 14 oktober 2026 · <a id="park-source" target="_blank" rel="noopener">Officiële parkfaciliteiten ↗</a></p></div></section>
   </main>
   <footer><a class="brand" href="#">↟ even eropuit</a><p>Bewaar herinneringen. Wij bewaren je planning alleen in deze browser.</p><a id="reserve" target="_blank" rel="noopener">Verblijf boeken bij EuroParcs ↗</a></footer>
   <div id="toast" class="toast" role="status" hidden></div>

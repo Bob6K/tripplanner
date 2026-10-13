@@ -7,7 +7,8 @@
   const filters = [['all','Alles'],['park','Op het park'],['indoor','Binnen'],['outdoor','Buiten'],['free','Gratis'],['paid','Betaald'],['near','≤10 minuten'],['medium','11–20 minuten'],['rain','Regenproof'],['favorites','♡ Favorieten']];
   let saved = {}, filter='all', query='', adding=null, moving=null, preferredDay=0;
   try { saved=JSON.parse(localStorage.getItem(key)||'{}')||{}; if(typeof saved!=='object'||Array.isArray(saved))saved={}; } catch { $('storage-warning').hidden=false; }
-  let park=parks.find(p=>p.id===saved.selectedPark)||parks[0];
+  const parkFromUrl = () => parks.find(p=>p.id===new URL(location.href).searchParams.get('park'));
+  let park=parkFromUrl()||parks.find(p=>p.id===saved.selectedPark)||parks[0];
   let state;
   const escape = value => String(value).replace(/[&<>"']/g, c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
   const external = (url,label) => `<a href="${escape(url)}" target="_blank" rel="noopener">${label}</a>`;
@@ -62,6 +63,10 @@
     $('park').innerHTML=parks.map(p=>`<option value="${escape(p.id)}">${escape(p.name)}</option>`).join('');$('park').value=park.id;
     $('park-thumb').src=park.thumbnail;$('park-thumb').alt=park.name;$('hero-image').src=park.thumbnail;$('hero-image').alt=park.name+' tussen het groen';$('hero-park').textContent=park.name;
     $('booking').href=park.website;$('reserve').href=park.bookingUrl;$('park-source').href=park.facilities;
+    $('hero-region').textContent=park.region.toLocaleUpperCase('nl');$('hero-intro').textContent=park.intro;$('park-note').textContent=park.parkNote;
+    document.title=`${park.name} · Even eropuit`;
+    document.querySelector('meta[name="description"]').content=`Gezinsuitjes voor kinderen van 4–7 jaar op en rond ${park.name}, met een eigen vakantieplanning.`;
+    $('planning').setAttribute('aria-label',`Jullie planning voor ${park.name}`);
   }
   function renderPlan(){
     $('days').innerHTML=state.plan.map((day,i)=>{
@@ -126,7 +131,15 @@
   $('dates-button').addEventListener('click',()=>{$('start-date').value=state.startDate;$('dates-dialog').showModal();});
   $('dates-form').addEventListener('submit',event=>{event.preventDefault();state.startDate=$('start-date').value;save();renderPlan();$('dates-dialog').close();toast('Vakantiedatums bewaard');});
   $('dates-clear').addEventListener('click',()=>{state.startDate='';save();renderPlan();$('dates-dialog').close();});
-  $('park').addEventListener('change',()=>{park=parks.find(p=>p.id===$('park').value);filter='all';query='';preferredDay=0;$('search').value='';initState();save();renderPark();render();});
+  function selectPark(id,updateUrl=true){
+    const next=parks.find(p=>p.id===id);if(!next)return;
+    finishDrag(false);document.querySelectorAll('dialog[open]').forEach(dialog=>dialog.close());
+    park=next;filter='all';query='';preferredDay=0;adding=null;moving=null;$('search').value='';clearTimeout(toastTimer);$('toast').hidden=true;
+    initState();save();renderPark();render();
+    if(updateUrl){const url=new URL(location.href);url.searchParams.set('park',park.id);history.pushState(null,'',url);}
+  }
+  $('park').addEventListener('change',()=>selectPark($('park').value));
+  window.addEventListener('popstate',()=>selectPark((parkFromUrl()||parks[0]).id,false));
   // Pointer capture keeps a mouse, pen or finger attached to the grip while dragging.
   // Only the grip disables touch scrolling; the rest of the card scrolls normally.
   let drag=null, scrollFrame=0;
@@ -176,4 +189,5 @@
   window.addEventListener('blur',()=>finishDrag(false));
   for(const img of [$('park-thumb'),$('hero-image')])img.addEventListener('error',()=>{img.alt=park.name+' · parkfoto momenteel niet beschikbaar';});
   initState();renderPark();render();save();
+  const initialUrl=new URL(location.href);initialUrl.searchParams.set('park',park.id);history.replaceState(null,'',initialUrl);
 })();
