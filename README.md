@@ -4,7 +4,7 @@ Nederlandse, mobielvriendelijke gezinsplanner rond EuroParcs Buitenhuizen. Stati
 
 ## Website
 
-Beoogde GitHub Pages-URL: https://bob6k.github.io/tripplanner/ (pas live na een geslaagde Pages-publicatie).
+Live website: https://bob6k.github.io/tripplanner/
 
 In GitHub: **Settings → Pages → Deploy from a branch → main → / (root) → Save**.
 
@@ -16,7 +16,7 @@ Open `index.html` in een browser, of start in deze map `python3 -m http.server 4
 
 - Parkselector met officiële EuroParcs-foto; datastructuur voor meerdere parken.
 - Activiteiten met filters, zoeken, favorieten, verbergen en terugzetten.
-- Drie dagen met hoofdactiviteit, kleine extra en regenbackup. Activiteiten kiezen via kaartknop; verwijderen met het kruisje. Een bezet vak vervangen toont vooraf een melding.
+- Drie dagen met vrije activiteitenlijstjes. Voeg uitjes toe via de kaartknop. Versleep geplande blokken met het ⠿ handvat naar een andere dag of een andere positie. Met Verplaats kies je dezelfde dag/volgorde via knoppen (ook met toetsenbord of op telefoon). Verwijderen kan met het kruisje. Bestaande planningen met hoofdactiviteit/extra/regen worden automatisch overgezet zonder keuzes te verliezen.
 - Aanpasbare datums, regenmodus, reset met bevestiging en printweergave.
 - Keuzes worden per park opgeslagen in localStorage op dit apparaat en in deze browser. Bij geblokkeerde opslag verschijnt een waarschuwing. Geen synchronisatie tussen apparaten.
 
