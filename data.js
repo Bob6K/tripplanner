@@ -399,3 +399,298 @@ window.TRIP_DATA.parks.push({
     }
   ]
 });
+
+// Noordwijkse Duinen: officiële bronnen gecontroleerd op 15-10-2026.
+window.TRIP_DATA.parks.push({
+  "id": "noordwijkse-duinen",
+  "brand": "EuroParcs",
+  "name": "EuroParcs Noordwijkse Duinen",
+  "location": "Noordwijk",
+  "checked": "2026-10-15",
+  "region": "Noordwijk & de Bollenstreek",
+  "intro": "Duinen om in te dwalen. Een strand vol kleine schatten. En dichtbij genoeg avontuur voor nieuwsgierige kinderen.",
+  "parkNote": "Het buitenzwembad is alleen in het zomerseizoen open en sluit vanaf september. Gasten kunnen gratis naar het binnenzwembad van Parc du Soleil, op circa 5 minuten rijden. Op Noordwijkse Duinen zijn een speeltuin, airtrampoline en zelf te doen activiteiten; er is geen vast animatieteam.",
+  "address": "EuroParcs Noordwijkse Duinen, Kapelleboslaan 41, 2204 AJ Noordwijk",
+  "thumbnail": "https://cdn-cms.bookingexperts.com/media/3624/41/optimized.jpg",
+  "website": "https://www.europarcs.nl/vakantieparken/noordwijkse-duinen",
+  "bookingUrl": "https://www.europarcs.nl/vakantieparken/noordwijkse-duinen/verblijven/comfort-5-personen?guest_group%5Badolescents%5D=0&guest_group%5Badults%5D=2&guest_group%5Bbabies%5D=0&guest_group%5Bchildren%5D=0&guest_group%5Bpets%5D=0&period%5Bend_date%5D=2026-10-26&period%5Bstart_date%5D=2026-10-16",
+  "bookingLabel": "Bekijk Comfort 5 personen ↗",
+  "facilities": "https://www.europarcsnoordwijkseduinen.nl/faciliteiten",
+  "activities": [
+    {
+      "id": "kidszoo",
+      "name": "KidsZoo binnenspeeltuin",
+      "icon": "🦁",
+      "color": "#eadccf",
+      "location": "KidsZoo, Pletterij 3, Noordwijkerhout",
+      "travel": [
+        10,
+        15
+      ],
+      "ages": "4–7 jaar, met begeleiding",
+      "setting": "indoor",
+      "cost": "paid",
+      "duration": "2–3 uur",
+      "description": "Klimmen, glijden, bouwen en springen in een grote binnenspeeltuin.",
+      "family": "Voor 4: rustig ontdekken met een ouder. Voor 7: het klimparcours en de glijbanen uitproberen.",
+      "opening": "Dagelijks 09:00–18:00; feestdagen kunnen afwijken.",
+      "url": "https://kidszoo.nl/het-park/",
+      "top": true,
+      "rain": true,
+      "warning": "Gripsokken zijn verplicht. Volg de gebruiksregels per toestel; dit is de speeltuin, niet de aparte escape room.",
+      "rulesUrl": "https://kidszoo.nl/huisregels/"
+    },
+    {
+      "id": "space-expo",
+      "name": "Space Expo",
+      "icon": "🚀",
+      "color": "#dcebed",
+      "location": "Space Expo, Keplerlaan 3, Noordwijk",
+      "travel": [
+        15,
+        20
+      ],
+      "ages": "4–7 jaar, met begeleiding",
+      "setting": "indoor",
+      "cost": "paid",
+      "duration": "1½–2 uur",
+      "description": "Een echte ruimtecapsule bekijken en door een model van het ruimtestation lopen.",
+      "family": "Voor 4: samen kijken en verwonderen. Voor 7: het speurspel doen; dat wordt vanaf 5 jaar aangeraden.",
+      "opening": "Controleer de kalender en reserveer vooraf een museumticket met tijdslot.",
+      "url": "https://www.space-expo.nl/veelgestelde-vragen",
+      "top": true,
+      "rain": true,
+      "warning": "De Space Train naar ESTEC is pas vanaf 9 jaar en hoort niet bij dit uitje voor 4–7 jaar."
+    },
+    {
+      "id": "dierenhoeve",
+      "name": "Kinderboerderij De Dierenhoeve",
+      "icon": "🐐",
+      "color": "#e5ead7",
+      "location": "De Dierenhoeve, Sint Marielaan 10, Noordwijkerhout",
+      "travel": [
+        10,
+        15
+      ],
+      "ages": "4–7 jaar, met begeleiding",
+      "setting": "outdoor",
+      "cost": "unknown",
+      "duration": "1–2 uur",
+      "description": "Dieren ontmoeten op de zorg- en kinderboerderij in Noordwijkerhout.",
+      "family": "Voor 4: dieren aanwijzen. Voor 7: ontdekken wat de verschillende dieren nodig hebben.",
+      "opening": "Dagelijks 10:00–17:00; gesloten op beide kerstdagen, nieuwjaarsdag en Koningsdag.",
+      "url": "https://dierenhoeve.nl/contact/",
+      "top": true,
+      "warning": "Volg de routebeschrijving van de boerderij: Google Maps kan verkeerd sturen en er is een tijdelijke omleiding. Entreevoorwaarden navragen."
+    },
+    {
+      "id": "speelzandt",
+      "name": "Natuurspeeltuin Speelzandt",
+      "icon": "🛝",
+      "color": "#efe0d4",
+      "location": "Speelzandt, Langevelderslag 52, Noordwijk",
+      "travel": [
+        5,
+        10
+      ],
+      "ages": "4–7 jaar, met begeleiding",
+      "setting": "outdoor",
+      "cost": "free",
+      "duration": "1–2 uur",
+      "description": "Klimmen en klauteren tussen de duinen bij Langevelderslag, goed te combineren met het strand.",
+      "family": "Voor beide kinderen: buiten spelen op eigen niveau en daarna samen iets drinken.",
+      "opening": "De speeltuin is altijd open en gratis toegankelijk; horeca heeft eigen openingstijden.",
+      "url": "https://speelzandt.nl/bezoek-plannen/",
+      "top": true,
+      "warning": "Parkeren is betaald. Dit is een buitenspeeltuin en geen regenoptie."
+    },
+    {
+      "id": "kabouterpad",
+      "name": "Duinkabouterpad Hollands Duin",
+      "icon": "🍄",
+      "color": "#e1e9d4",
+      "location": "Restaurant Langs Berg en Dal, Langevelderlaan 22, Noordwijk",
+      "travel": [
+        5,
+        10
+      ],
+      "ages": "4–7 jaar, met begeleiding",
+      "setting": "outdoor",
+      "cost": "paid",
+      "duration": "1–1½ uur",
+      "description": "Met een puntmuts en opdrachten op zoek naar kaboutersporen op een route van circa 1,5 kilometer.",
+      "family": "De officiële leeftijd is 3–9 jaar. Help de jongste met het verhaal en laat de oudste de routepaaltjes zoeken.",
+      "opening": "Alleen tijdens openingstijden van Restaurant Langs Berg en Dal; informeer daar naar het pakket.",
+      "url": "https://www.staatsbosbeheer.nl/uit-in-de-natuur/duinkabouterpad-hollands-duin",
+      "top": true,
+      "warning": "Smalle onverharde paden; niet geschikt voor een rolstoel. Dit is de korte route vanaf Langevelderlaan, niet het langere pad bij Speelzandt."
+    },
+    {
+      "id": "strand-langevelderslag",
+      "name": "Strand Langevelderslag",
+      "icon": "🐚",
+      "color": "#f0e7ce",
+      "location": "Strandafrit 27, Langevelderslag, Noordwijk",
+      "travel": [
+        5,
+        10
+      ],
+      "ages": "4–7 jaar, met begeleiding",
+      "setting": "outdoor",
+      "cost": "free",
+      "duration": "1½–3 uur",
+      "description": "Schelpen zoeken en zandkastelen bouwen op het familiestrand achter de duinen.",
+      "family": "Voor beide kinderen: een schelpenschat verzamelen of samen een zanddorp bouwen.",
+      "opening": "Geen regulier toegangsrooster; bekijk het weer en de strandvlaggen voor vertrek.",
+      "url": "https://www.noordwijk.info/nl/locatie-overzicht/440133611/strandafrit-24-langevelderslag",
+      "warning": "Betaald parkeren en extra looptijd vanaf de auto. Drukke stranddagen kunnen de rit verlengen; blijf bij de kinderen aan zee."
+    },
+    {
+      "id": "soleil-zwembad",
+      "name": "Binnenzwemmen bij Parc du Soleil",
+      "icon": "💦",
+      "color": "#dcebed",
+      "location": "EuroParcs Parc du Soleil, Kraaierslaan 7, Noordwijk",
+      "travel": [
+        5,
+        10
+      ],
+      "ages": "4–7 jaar, met begeleiding",
+      "setting": "indoor",
+      "cost": "included",
+      "duration": "45–90 minuten",
+      "description": "Een overdekt zwembad met peuter- en kleuterbad bij het naburige EuroParcs-park.",
+      "family": "Voor 4: samen rustig spetteren. Voor 7: zwemmen op eigen niveau.",
+      "opening": "Vraag de receptie van Noordwijkse Duinen naar toegangscode, actuele tijden en zwemregels.",
+      "url": "https://www.europarcsnoordwijkseduinen.nl/faciliteiten/verwarmd-buitenzwembad-zomerseizoen",
+      "rain": true,
+      "warning": "Ligt op een ander park. Volgens EuroParcs gratis voor gasten van Noordwijkse Duinen; regel toegang vooraf bij de receptie.",
+      "rulesUrl": "https://www.europarcsparcdusoleil.nl/parkinformatie"
+    },
+    {
+      "id": "park-speeltuin",
+      "name": "Spelen op het park",
+      "icon": "🛝",
+      "color": "#e6ead5",
+      "location": "EuroParcs Noordwijkse Duinen",
+      "travel": [
+        0,
+        0
+      ],
+      "ages": "4–7 jaar, met begeleiding",
+      "setting": "outdoor",
+      "cost": "included",
+      "duration": "30–60 minuten",
+      "description": "Een speelpauze bij glijbaan, klimtoestellen, schommel en speelelementen in het zand.",
+      "family": "Laat beide kinderen hun eigen speelplek kiezen en houd de jongste in het zicht.",
+      "opening": "Volg de gebruiksregels bij de speeltuin.",
+      "url": "https://www.europarcsnoordwijkseduinen.nl/faciliteiten",
+      "onPark": true
+    },
+    {
+      "id": "park-trampoline",
+      "name": "Springen op de airtrampoline",
+      "icon": "🦘",
+      "color": "#eadccf",
+      "location": "EuroParcs Noordwijkse Duinen",
+      "travel": [
+        0,
+        0
+      ],
+      "ages": "4–7 jaar, met begeleiding",
+      "setting": "outdoor",
+      "cost": "included",
+      "duration": "20–40 minuten",
+      "description": "Even lekker springen op de airtrampoline die EuroParcs op het park vermeldt.",
+      "family": "Laat de jongste rustig beginnen en houd rekening met andere springers.",
+      "opening": "Weersafhankelijk; controleer ter plaatse de gebruiksregels.",
+      "url": "https://www.europarcsnoordwijkseduinen.nl/faciliteiten",
+      "onPark": true
+    },
+    {
+      "id": "park-zwembad",
+      "name": "Verwarmd buitenzwembad — zomer",
+      "icon": "💦",
+      "color": "#dcebed",
+      "location": "EuroParcs Noordwijkse Duinen",
+      "travel": [
+        0,
+        0
+      ],
+      "ages": "4–7 jaar, met begeleiding",
+      "setting": "outdoor",
+      "cost": "included",
+      "duration": "45–90 minuten",
+      "description": "In de zomer zwemmen op het park, met een apart peuter- en kleuterbad.",
+      "family": "Voor 4: samen in het ondiepe bad. Voor 7: zwemmen op eigen niveau.",
+      "opening": "Alleen zomerseizoen; volgens EuroParcs gesloten vanaf september.",
+      "url": "https://www.europarcsnoordwijkseduinen.nl/faciliteiten/verwarmd-buitenzwembad-zomerseizoen",
+      "onPark": true,
+      "warning": "Gesloten tijdens oktober. Kies dan het binnenzwembad van Parc du Soleil en regel toegang via de receptie."
+    },
+    {
+      "id": "park-yuki",
+      "name": "Yuki’s speurtocht",
+      "icon": "🔎",
+      "color": "#e5ead7",
+      "location": "EuroParcs Noordwijkse Duinen",
+      "travel": [
+        0,
+        0
+      ],
+      "ages": "4–7 jaar, met begeleiding",
+      "setting": "outdoor",
+      "cost": "unknown",
+      "duration": "30–60 minuten",
+      "description": "Met een kaart en QR-codes samen opdrachten en raadsels op het park oplossen.",
+      "family": "Voor 7: raadsels proberen. Voor 4: samen zoeken met hulp van een ouder; het programma noemt 6+.",
+      "opening": "Haal de kaart bij de receptie en bekijk de actuele activiteitenkalender.",
+      "url": "https://www.europarcs.nl/vakantieparken/noordwijkse-duinen/activiteiten",
+      "onPark": true,
+      "warning": "Een telefoon met internet is nodig. Kosten en beschikbaarheid navragen; geen vast animatieteam en Yuki is niet fysiek aanwezig."
+    },
+    {
+      "id": "park-knutselen",
+      "name": "Knutselen in het huisje",
+      "icon": "✂️",
+      "color": "#e9dfe9",
+      "location": "EuroParcs Noordwijkse Duinen",
+      "travel": [
+        0,
+        0
+      ],
+      "ages": "4–7 jaar, met begeleiding",
+      "setting": "indoor",
+      "cost": "unknown",
+      "duration": "30–60 minuten",
+      "description": "Een rustig binnenmoment met het knutselpakket dat EuroParcs voor dit park noemt.",
+      "family": "Laat beide kinderen op eigen niveau tekenen, knippen en maken.",
+      "opening": "Vraag bij de receptie naar inhoud, kosten en beschikbaarheid van het pakket.",
+      "url": "https://www.europarcsnoordwijkseduinen.nl/faciliteiten",
+      "onPark": true,
+      "rain": true,
+      "warning": "Samen zelf doen in het vakantiehuis; geen begeleide knutselclub."
+    },
+    {
+      "id": "park-fiets",
+      "name": "Samen fietsen vanuit het park",
+      "icon": "🚲",
+      "color": "#dfe8df",
+      "location": "Fietsverhuur, EuroParcs Noordwijkse Duinen",
+      "travel": [
+        0,
+        0
+      ],
+      "ages": "4–7 jaar, met begeleiding",
+      "setting": "outdoor",
+      "cost": "paid",
+      "duration": "1–2 uur",
+      "description": "Het park verhuurt ook kinderfietsen. Kies een korte route door de omgeving.",
+      "family": "Kies een passende maat en pas de afstand aan de jongste aan.",
+      "opening": "Informeer bij de receptie naar beschikbare kinderfietsen en reserveringen.",
+      "url": "https://www.europarcsnoordwijkseduinen.nl/faciliteiten",
+      "onPark": true,
+      "warning": "Vraag vooraf naar maten, voorwaarden en eventuele kinderzitjes."
+    }
+  ]
+});

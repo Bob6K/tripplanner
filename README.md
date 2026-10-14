@@ -1,6 +1,6 @@
 # Even eropuit — Tripplanner
 
-Nederlandse, mobielvriendelijke gezinsplanner rond EuroParcs Buitenhuizen, EuroParcs De Woudhoeve en Landal Strandpark Duynhille. Statische HTML/CSS/JavaScript, zonder installatie, backend, API-sleutels of login.
+Nederlandse, mobielvriendelijke gezinsplanner rond EuroParcs Buitenhuizen, EuroParcs De Woudhoeve , Landal Strandpark Duynhille en EuroParcs Noordwijkse Duinen. Statische HTML/CSS/JavaScript, zonder installatie, backend, API-sleutels of login.
 
 ## Website
 
@@ -14,7 +14,7 @@ Open `index.html` in een browser, of start in deze map `python3 -m http.server 4
 
 ## Functies
 
-- Drie zichtbare parkknoppen met officiële parkfoto’s en groene selectiehighlight: Buitenhuizen, De Woudhoeve en Strandpark Duynhille. Foto, regiotekst, activiteiten, routes, parklinks en eigen planning wisselen mee. Directe parklinks werken via `?park=buitenhuizen` , `?park=woudhoeve` en `?park=duynhille`, inclusief de terug-/vooruitknoppen van de browser.
+- Vier zichtbare parkknoppen met officiële parkfoto’s en groene selectiehighlight: Buitenhuizen, De Woudhoeve, Strandpark Duynhille en Noordwijkse Duinen. Foto, regiotekst, activiteiten, routes, parklinks en eigen planning wisselen mee. Directe parklinks werken via `?park=buitenhuizen` , `?park=woudhoeve` , `?park=duynhille` en `?park=noordwijkse-duinen`, inclusief de terug-/vooruitknoppen van de browser.
 - Activiteiten met filters, zoeken, favorieten, verbergen en terugzetten.
 - Drie dagen met vrije activiteitenlijstjes. Voeg uitjes toe via de kaartknop. Het hele geplande blok is sleepbaar, behalve de titel en verwijderknop. De titel opent volledige activiteitinformatie. In de toevoegpopup kies je één of meerdere dagen met drie dagkaarten; er zijn geen dropdowns. Toetsenbord: focus een blok, spatie/Enter om op te pakken, pijlen om te verplaatsen, Enter om te bewaren, Escape om te annuleren. Verwijderen kan met het kruisje. Bestaande planningen met hoofdactiviteit/extra/regen worden automatisch overgezet zonder keuzes te verliezen.
 - Aanpasbare datums, regenmodus, reset met bevestiging en printweergave.
@@ -67,3 +67,19 @@ Parkbron: https://www.landal.nl/parken/strandpark-duynhille/op-en-rond-het-park.
 Omgeving: De Mèkkerstee, De Flipjes, strand Westerduinen, RTM-tram, A Seal, Aqua Mundo Port Zélande en minigolf bij Houten Kaap (een ander park). Openingstijden en seizoensbeperkingen staan per activiteit, met officiële bronlink. De Flipjes zondag gesloten; RTM alleen op rijdagen.
 
 Parkfoto van de officiële Landal-pagina: https://mss-p-014-delivery.stylelabs.cloud/api/public/content/9511047-3x2?t=w1280. Extern geladen. Controle: 14 oktober 2026.
+
+## Noordwijkse Duinen
+
+Directe link: https://bob6k.github.io/tripplanner/?park=noordwijkse-duinen
+
+13 ideeën voor 4–7 jaar: 6 op het park en 7 daarbuiten met indicatieve autoritten van maximaal 20 minuten bij normaal verkeer. Rijtijden zijn schattingen, zonder parkeren/lopen; controleer de route voor vertrek. De footer opent de aangeleverde Comfort 5-link met oorspronkelijke datums en gastinstellingen (2 volwassenen, 0 kinderen); controleer die zelf bij boeken. Plannerdata worden daardoor niet aangepast.
+
+Bronnen gecontroleerd op 15 oktober 2026. Brondata worden per park weergegeven; de andere parken behouden hun eerdere controledatum.
+
+Op park: speeltuin, airtrampoline, zomerzwembad (gesloten vanaf september), Yuki-speurtocht (programma noemt 6+, jongste heeft ouderhulp nodig), knutselpakket en fietsverhuur inclusief kinderfietsen. Geen vast animatieteam. Bron: https://www.europarcsnoordwijkseduinen.nl/faciliteiten.
+
+Omgeving: KidsZoo (gripsokken verplicht), Space Expo (museum; Space Train vanaf 9 dus uitgesloten), De Dierenhoeve (actuele omleiding en eigen routebeschrijving), Speelzandt, het korte 1,5 km Duinkabouterpad vanaf Langs Berg en Dal, strand Langevelderslag en binnenzwemmen bij Parc du Soleil (gratis voor parkgasten, code bij receptie). Alle officiële links staan in de kaarten. Entree De Dierenhoeve niet bevestigd en daarom als 'Kosten navragen' opgenomen.
+
+Geen Keukenhof-bloementuin als herfstuitje; geen verder gelegen stedelijke musea of attracties buiten de rijtijdselectie opgenomen.
+
+Parkfoto afkomstig van de officiële EuroParcs-pagina: https://cdn-cms.bookingexperts.com/media/3624/41/optimized.jpg.

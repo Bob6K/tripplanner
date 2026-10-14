@@ -21,6 +21,8 @@
 @media(max-width:400px){.park-button{padding:9px 7px;gap:5px;flex-direction:column;align-items:flex-start;min-height:146px}.park-button img{width:44px;height:40px}.park-button-copy strong{font-size:13px}.park-button-copy>span{font-size:9px}.park-tick{position:absolute;right:7px;top:9px}.day-choices{gap:7px}.day-choice-face{font-size:11px;min-height:140px}.day-choice-face strong{font-size:13px}}
 @media print{.drag-mark{display:none}.plan-title{min-height:0;text-decoration:none}.plan-block{cursor:auto}}
 
-/* Three parks remain visible at every screen size. */
-.park-buttons{order:3;flex-basis:100%;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));justify-content:stretch}.park-button{max-width:none;min-width:0}.header-plan{margin-left:auto}
+/* Park cards remain visible at every screen size. */
+.park-buttons{order:3;flex-basis:100%;display:grid;grid-template-columns:repeat(4,minmax(0,1fr));justify-content:stretch}.park-button{max-width:none;min-width:0}.header-plan{margin-left:auto}
 @media(max-width:600px){.park-buttons{grid-template-columns:1fr}.park-button{flex-direction:row;align-items:center;min-height:72px;padding:8px 12px;gap:12px}.park-button img{width:48px;height:48px}.park-button-copy strong{font-size:14px}.park-button-copy>span{font-size:10px}.park-tick{position:static;margin-left:auto;width:21px;height:21px}}
+
+@media(min-width:601px) and (max-width:1100px){.park-buttons{grid-template-columns:repeat(2,minmax(0,1fr))}}
