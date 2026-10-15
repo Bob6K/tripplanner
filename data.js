@@ -694,3 +694,302 @@ window.TRIP_DATA.parks.push({
     }
   ]
 });
+
+// Bestaande parken tijdelijk onzichtbaar; hun gegevens en browseropslag blijven behouden.
+window.TRIP_DATA.parks.forEach(park => { park.hidden = true; });
+window.TRIP_DATA.parks.push({
+  "id": "volendam",
+  "brand": "Landal",
+  "name": "Landal Volendam",
+  "location": "Volendam",
+  "checked": "2026-10-15",
+  "region": "Volendam & Laag Holland",
+  "intro": "Bootjes in de haven. Koeien om de hoek. En alle tijd om samen iets leuks te ontdekken.",
+  "parkNote": "Dit kleine waterpark heeft vooral rust, water en fietsverhuur. Een eigen speeltuin, animatieprogramma of zwembad wordt niet op de faciliteitenpagina vermeld. Slobbeland ligt naast het park en staat daarom bij Volendam. Alle omgevingsuitjes liggen ten noorden van Amsterdam; rijtijden zijn schattingen zonder parkeren of lopen.",
+  "address": "Landal Volendam, Slobbeland 5, 1131 AA Volendam",
+  "thumbnail": "https://mss-p-014-delivery.stylelabs.cloud/api/public/content/3951811-3x2?t=w1280",
+  "website": "https://www.landal.nl/parken/volendam",
+  "bookingUrl": "https://www.landal.nl/parken/volendam/prijzen-en-beschikbaarheid",
+  "facilities": "https://www.landal.nl/parken/volendam/op-en-rond-het-park",
+  "activities": [
+    {
+      "id": "park-fiets",
+      "name": "Samen fietsen vanuit het park",
+      "icon": "🚲",
+      "zone": "park",
+      "category": "natuur",
+      "location": "Fietsverhuur, Landal Volendam",
+      "travel": [
+        0,
+        0
+      ],
+      "ages": "4–7 jaar, samen met een volwassene",
+      "setting": "outdoor",
+      "cost": "paid",
+      "duration": "1–2 uur",
+      "description": "Huur fietsen bij de receptie en kies een kort rondje langs het Markermeer.",
+      "family": "Een korte route en een passende kinderfiets of zitje maken dit ook voor de jongste fijn.",
+      "opening": "Vraag de receptie naar verhuurtijden, kindermaten en kinderzitjes.",
+      "url": "https://www.landal.nl/parken/volendam/op-en-rond-het-park",
+      "warning": "Beschikbaarheid van passende kinderfietsen en zitjes vooraf bevestigen."
+    },
+    {
+      "id": "park-waterkant",
+      "name": "Bootjes kijken aan het Markermeer",
+      "icon": "🌿",
+      "zone": "park",
+      "category": "natuur",
+      "location": "Landal Volendam, Slobbeland 5, Volendam",
+      "travel": [
+        0,
+        0
+      ],
+      "ages": "4–7 jaar, samen met een volwassene",
+      "setting": "outdoor",
+      "cost": "included",
+      "duration": "20–45 minuten",
+      "description": "Een klein rondje op het park en samen kijken naar voorbijvarende boten. Een zelf bedacht rustig moment bij jullie huisje.",
+      "family": "Voor 4: bootjes tellen. Voor 7: vogels en verschillende soorten boten herkennen.",
+      "opening": "Bij daglicht en goed weer; volg de toegangsregels van het park.",
+      "url": "https://www.landal.nl/parken/volendam",
+      "warning": "Dit is geen georganiseerde activiteit of speeltuin. Het park ligt aan open water; blijf bij de kinderen."
+    },
+    {
+      "id": "haven",
+      "name": "De Dijk & de haven",
+      "icon": "⚓",
+      "zone": "volendam",
+      "category": "natuur",
+      "location": "Haven, Volendam",
+      "travel": [
+        0,
+        5
+      ],
+      "ages": "4–7 jaar, samen met een volwassene",
+      "setting": "outdoor",
+      "cost": "free",
+      "duration": "45–90 minuten",
+      "description": "Langs de haven wandelen, boten bekijken en onderweg een poffertjes- of ijsjespauze nemen.",
+      "family": "Maak een eenvoudige speurtocht: vind een rode boot, een anker en een meeuw.",
+      "opening": "Vrij toegankelijk; winkels en horeca hebben eigen openingstijden.",
+      "url": "https://www.landal.nl/parken/volendam",
+      "warning": "Vanaf het park is het centrum ook te voet bereikbaar. Eten, drinken en parkeren zijn niet inbegrepen."
+    },
+    {
+      "id": "museum",
+      "name": "Volendams Museum",
+      "icon": "🏛️",
+      "zone": "volendam",
+      "category": "museum",
+      "location": "Volendams Museum, Zeestraat 41, Volendam",
+      "travel": [
+        5,
+        10
+      ],
+      "ages": "4–7 jaar, samen met een volwassene",
+      "setting": "indoor",
+      "cost": "paid",
+      "duration": "45–75 minuten",
+      "description": "Kijk hoe mensen vroeger woonden en welke klederdracht ze droegen. Ook zijn er scheepsmodellen en het sigarenbandjeshuisje.",
+      "family": "Voor 4: samen kijken en aanwijzen. Voor 7: vraag naar de speurtocht voor 5–8 jaar.",
+      "opening": "Volgens het museum dagelijks 10:00–17:00; controleer afwijkingen.",
+      "url": "https://www.volendamsmuseum.nl/openingstijden-en-prijzen",
+      "rain": true,
+      "warning": "Kies de historische collectie. Vraag welke delen geschikt zijn voor jonge kinderen; er is ook een tentoonstelling over de nieuwjaarsbrand.",
+      "rulesUrl": "https://www.museum.nl/nl/volendams-museum"
+    },
+    {
+      "id": "markenexpress",
+      "name": "Met de boot naar Marken",
+      "icon": "⛴️",
+      "zone": "volendam",
+      "category": "water",
+      "location": "Volendam Marken Express, Haven 39, Volendam",
+      "travel": [
+        0,
+        5
+      ],
+      "ages": "4–7 jaar, samen met een volwassene",
+      "setting": "mixed",
+      "cost": "paid",
+      "duration": "2–3 uur inclusief kort rondje Marken",
+      "description": "Stap in Volendam op de veerboot en bekijk de haven en huisjes van Marken.",
+      "family": "Voor beide kinderen: de overtocht is al het avontuur. Houd het rondje op Marken kort.",
+      "opening": "Bekijk actuele afvaarten en plan ook de laatste terugvaart; het schema kan veranderen.",
+      "url": "https://www.markenexpress.nl/tickets/boottickets/",
+      "warning": "Dit is een bootuitje vanuit Volendam; de totale uitstap duurt langer dan 30 minuten. Kinderen 4–11 hebben een kindertarief. Afvaarten zijn weersafhankelijk."
+    },
+    {
+      "id": "waterdam",
+      "name": "Zwemmen bij De Waterdam",
+      "icon": "💦",
+      "zone": "volendam",
+      "category": "zwemmen",
+      "location": "Zwembad De Waterdam, Harlingenlaan 25, Volendam",
+      "travel": [
+        5,
+        10
+      ],
+      "ages": "4–7 jaar, samen met een volwassene",
+      "setting": "indoor",
+      "cost": "paid",
+      "duration": "1–2 uur",
+      "description": "Samen binnenzwemmen tijdens het recreatieve zwemuur. In de zomer zijn er ook buitenbaden.",
+      "family": "Voor 4: rustig samen spetteren. Voor 7: zwemmen op eigen niveau.",
+      "opening": "Controleer het actuele vrijzwemrooster; les- en banenzwemtijden zijn geen recreatieve uren.",
+      "url": "https://www.waterdam.nl/",
+      "rain": true,
+      "warning": "Vraag naar regels voor kinderen zonder zwemdiploma, drijfmiddelen en ouderbegeleiding. Buitenbaden zijn seizoensgebonden."
+    },
+    {
+      "id": "slobbeland",
+      "name": "Slobbeland — zomers spelen & zwemmen",
+      "icon": "🛝",
+      "zone": "volendam",
+      "category": "spelen",
+      "location": "Recreatiecentrum Slobbeland, Slobbeland, Volendam",
+      "travel": [
+        0,
+        5
+      ],
+      "ages": "4–7 jaar, samen met een volwassene",
+      "setting": "outdoor",
+      "cost": "paid",
+      "duration": "1½–3 uur",
+      "description": "Naast Landal liggen een openluchtzwembad, speeltoestellen en een ligweide aan het water.",
+      "family": "Combineer een kort speelmoment met samen zwemmen als het warm genoeg is.",
+      "opening": "Zomerlocatie. De site noemt 09:00–18:00 tijdens het seizoen; bij slecht weer kunnen tijden afwijken.",
+      "url": "https://www.slobbeland.nl/",
+      "warning": "Ligt naast het park en is geen eigen Landal-zwembad. Buiten het zomerseizoen niet als open aannemen; controleer opening en entree vooraf."
+    },
+    {
+      "id": "kaas",
+      "name": "Cheese Factory Volendam",
+      "icon": "🧀",
+      "zone": "volendam",
+      "category": "ambacht",
+      "location": "Cheese Factory Volendam, Haven 25, Volendam",
+      "travel": [
+        0,
+        5
+      ],
+      "ages": "4–7 jaar, samen met een volwassene",
+      "setting": "indoor",
+      "cost": "free",
+      "duration": "20–45 minuten",
+      "description": "Een kort kijkje in de wereld van kaas, met een demonstratie van ongeveer tien minuten en een proeverij.",
+      "family": "Voor 4: kijken en ruiken. Voor 7: ontdekken hoe melk kaas wordt.",
+      "opening": "Seizoensrooster; vraag ter plaatse wanneer de volgende demonstratie begint.",
+      "url": "https://www.cheesefactoryvolendam.com/",
+      "rain": true,
+      "warning": "Dit is een demonstratie en winkel, geen kinderboerderij. Vraag bij allergieën welke kaas geschikt is."
+    },
+    {
+      "id": "jacobs",
+      "name": "Koeien kijken bij Jacobs Hoeve",
+      "icon": "🐄",
+      "zone": "omgeving",
+      "category": "boerderij",
+      "location": "Jacobs Hoeve, Hoogedijk 8, Katwoude",
+      "travel": [
+        5,
+        10
+      ],
+      "ages": "4–7 jaar, samen met een volwassene",
+      "setting": "mixed",
+      "cost": "unknown",
+      "duration": "45–90 minuten",
+      "description": "Bezoek de biologische Jersey-boerderij en kijk in de potstal hoe de koeien leven.",
+      "family": "Voor 4: koeien kijken. Voor 7: ontdekken wat een koe nodig heeft en hoe melk wordt gebruikt.",
+      "opening": "Dagelijks volgens het seizoensrooster; feestdagen kunnen afwijken.",
+      "url": "https://henriwillig.com/blog/laten-we-het-over-koeien-hebben/",
+      "warning": "Geen gegarandeerde knuffel- of voeractiviteit. Vraag naar toegang, eventuele kosten en welke dieren die dag te zien zijn.",
+      "rulesUrl": "https://henriwillig.com/bezoek-ons/kaasboerderij/katwoude/openingstijden-en-adres/"
+    },
+    {
+      "id": "monkeytown",
+      "name": "Monkey Town Purmerend",
+      "icon": "🐒",
+      "zone": "omgeving",
+      "category": "spelen",
+      "location": "Monkey Town, Grotenhuysweg 102, Purmerend",
+      "travel": [
+        15,
+        20
+      ],
+      "ages": "4–7 jaar, samen met een volwassene",
+      "setting": "indoor",
+      "cost": "paid",
+      "duration": "2–3 uur",
+      "description": "Een binnenspeeltuin met klimstructuren, glijbanen en verschillende speelzones.",
+      "family": "Voor 4: rustig beginnen in een passende speelzone. Voor 7: samen klimmen en klauteren.",
+      "opening": "Zeven dagen per week geopend; controleer actuele uren en feestdagen.",
+      "url": "https://monkeytown.eu/nl/purmerend/home",
+      "rain": true,
+      "warning": "Gewoon spelen kan volgens de vestiging zonder reservering. Controleer sokken- en toestelregels; losse extra activiteiten kunnen andere leeftijden hebben."
+    },
+    {
+      "id": "hemmeland",
+      "name": "Spelen & picknicken op Hemmeland",
+      "icon": "🌳",
+      "zone": "omgeving",
+      "category": "spelen",
+      "location": "Hemmeland 10, Monnickendam",
+      "travel": [
+        10,
+        15
+      ],
+      "ages": "4–7 jaar, samen met een volwassene",
+      "setting": "outdoor",
+      "cost": "free",
+      "duration": "1–2 uur",
+      "description": "Een kort rondje langs de speel- en ligweiden, met ruimte voor een balspel of picknick.",
+      "family": "Neem een bal en een kleed mee. Kies een kleine wandeling in plaats van de lange streekroutes.",
+      "opening": "Het recreatiegebied is dagelijks toegankelijk; horeca heeft eigen uren.",
+      "url": "https://www.laagholland.com/nl/locaties/4088798008/dagrecreatie-hemmeland",
+      "warning": "Open water in de buurt. Voor zwemmen eerst de actuele waterkwaliteit controleren; dit idee is vooral spelen op het land."
+    },
+    {
+      "id": "markermuseum",
+      "name": "Marker Museum & een kort dorpsrondje",
+      "icon": "🏠",
+      "zone": "omgeving",
+      "category": "museum",
+      "location": "Centrale parkeerplaats Marken, Kruisbaakweg, Marken",
+      "travel": [
+        20,
+        25
+      ],
+      "ages": "4–7 jaar, samen met een volwassene",
+      "setting": "mixed",
+      "cost": "paid",
+      "duration": "1–1½ uur",
+      "description": "Bekijk een oud woonhuis en kleurrijke Marker klederdracht, en loop daarna langs de houten huisjes.",
+      "family": "Voor 4: bijzondere huisjes en kleding zoeken. Voor 7: vergelijken met jullie eigen huis.",
+      "opening": "Seizoensopening; in oktober ma–za 11:00–16:00 en zo 12:00–16:00 volgens de museumsite. Controleer de winteropening.",
+      "url": "https://www.markermuseum.nl/index.php",
+      "warning": "Parkeer aan de rand van Marken; het museum aan Kerkbuurt 44–47 is nog circa vijf minuten lopen. Parkeren kost extra. Buitenwandeling is niet regenproof."
+    },
+    {
+      "id": "zaanse-schans",
+      "name": "Molens & ambachten op de Zaanse Schans",
+      "icon": "🌬️",
+      "zone": "omgeving",
+      "category": "ambacht",
+      "location": "Zaanse Schans, Schansend 7, Zaandam",
+      "travel": [
+        25,
+        30
+      ],
+      "ages": "4–7 jaar, samen met een volwassene",
+      "setting": "mixed",
+      "cost": "paid",
+      "duration": "1½–3 uur",
+      "description": "Kies een kort rondje langs molens en houten huizen, met één ambacht of museum erbij.",
+      "family": "Voor 4: draaiende molens zoeken. Voor 7: ontdekken wat een molen maakt.",
+      "opening": "Het dorp is dagelijks te bezoeken; molens en musea hebben eigen openingstijden en tickets.",
+      "url": "https://www.dezaanseschans.nl/plan-uw-bezoek/",
+      "warning": "Aan de grens van 30 minuten: kies een route via Purmerend/A7, buiten Amsterdam. Verkeer kan extra tijd geven. Het dorp is vrij toegankelijk; parkeren en veel binnenlocaties zijn betaald."
+    }
+  ]
+});

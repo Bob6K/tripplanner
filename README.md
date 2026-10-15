@@ -1,3 +1,23 @@
+# Even eropuit — Volendam
+
+De live site toont nu alleen Landal Volendam als een datumvrij Things to do-overzicht. De eerdere vier parken zijn tijdelijk verborgen met `hidden: true` in data.js; hun gegevens en localStorage blijven behouden. Oude park-URL’s openen Volendam. De eerdere plannercontroller app.js blijft bewaard maar wordt niet geladen.
+
+Live: https://bob6k.github.io/tripplanner/?park=volendam
+
+Drie onderdelen: 2 ideeën op het park, 6 in Volendam en 5 in de omgeving. Omgeving tot circa 30 minuten rijden bij normaal verkeer, ten noorden van Amsterdam; geen uitjes in Amsterdam centrum. Zaanse Schans via de noordelijke route is een grensgeval: verkeer kan de rit verlengen. Parkeren en lopen komen erbij.
+
+Dezelfde kaartstijl, met vaste categoriepaletten en tekstlabels: spelen, boerderij, museum, zwemmen, varen, natuur/wandelen en ambachten/proeven. Kleurenlegenda werkt als filter. Zoeken, binnen/buiten/gratis/regen/favorieten, verbergen/terugzetten, informatiepopups en printen blijven beschikbaar. Geen dagplanner of datumvelden. Favorieten en verborgen uitjes worden per park in dezelfde localStorage bewaard.
+
+Bronnen gecontroleerd op 15 oktober 2026 en per activiteit gekoppeld. Landal bevestigt fietsverhuur en ligging aan water; geen eigen zwembad of speeltuin als voorziening aangenomen. Bootjes kijken is uitdrukkelijk een zelf bedacht idee. Slobbeland is een aparte zomerlocatie naast het park en staat bij Volendam. Marker Museum heeft seizoensopening; Volendams Museum heeft een historische collectie en ook een brandtentoonstelling, met gerichte tip voor jonge kinderen. Geen onbevestigde dierknuffelactiviteit toegevoegd.
+
+Parkfoto: https://mss-p-014-delivery.stylelabs.cloud/api/public/content/3951811-3x2?t=w1280 — afkomstig van https://www.landal.nl/parken/volendam.
+
+Controller: volendam.js. Data: data.js. Controle: `node --check volendam.js`, `node --check data.js` en browsercontrole van categorieën, popups, opslag na herladen en mobiele weergave.
+
+---
+
+## Eerdere uitvoering (tijdelijk verborgen)
+
 # Even eropuit — Tripplanner
 
 Nederlandse, mobielvriendelijke gezinsplanner rond EuroParcs Buitenhuizen, EuroParcs De Woudhoeve , Landal Strandpark Duynhille en EuroParcs Noordwijkse Duinen. Statische HTML/CSS/JavaScript, zonder installatie, backend, API-sleutels of login.
