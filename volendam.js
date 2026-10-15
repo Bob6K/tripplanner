@@ -29,7 +29,7 @@
   }
   function card(a){
     const t=types[a.category],fav=state.favorites.includes(a.id);
-    return `<article class="card${state.rain&&a.setting==='outdoor'?' dimmed':''}" data-activity="${a.id}" style="--activity-color:${t.color};--activity-ink:${t.ink}"><div class="card-visual" style="--card-bg:${t.color}"><span class="card-emoji" aria-hidden="true">${a.icon}</span><span class="badge activity-kind">${t.label}</span><button class="favorite" data-favorite="${a.id}" aria-pressed="${fav}" aria-label="${esc(a.name)} ${fav?'uit favorieten verwijderen':'als favoriet bewaren'}">${fav?'♥':'♡'}</button></div><div class="card-body"><p class="card-location">${esc(a.location)}</p><h3><button class="activity-title" data-info="${a.id}" aria-haspopup="dialog">${esc(a.name)}</button></h3><div class="chips"><span class="chip">${esc(drive(a))}</span><span class="chip">${a.setting==='indoor'?'Binnen':a.setting==='outdoor'?'Buiten':'Binnen & buiten'}</span><span class="chip">${cost(a)}</span><span class="chip">${esc(a.duration)}</span></div><p class="card-description">${esc(a.description)}</p><p class="family-tip">${esc(a.family)}</p>${a.warning?`<p class="warning">${esc(a.warning)}</p>`:''}<details><summary>Leeftijd & bezoekinformatie</summary>${details(a)}</details><div class="card-links">${link(a.url,'Officiële website ↗')}${link(route(a),'Route ↗')}</div><div class="card-bottom"><button class="button light" data-info="${a.id}" aria-haspopup="dialog">Meer informatie</button><button class="text-button hide" data-hide="${a.id}" aria-label="${esc(a.name)} verbergen">Verbergen</button></div></div></article>`;
+    return `<article class="card${state.rain&&a.setting==='outdoor'?' dimmed':''}" data-activity="${a.id}" style="--activity-color:${t.color};--activity-ink:${t.ink}"><div class="card-visual" style="--card-bg:${t.color}"><span class="card-emoji" aria-hidden="true">${a.icon}</span><span class="badge activity-kind">${t.label}</span><button class="favorite" data-favorite="${a.id}" aria-pressed="${fav}" aria-label="${esc(a.name)} ${fav?'uit favorieten verwijderen':'als favoriet bewaren'}">${fav?'♥':'♡'}</button></div><div class="card-body"><p class="card-location">${esc(a.location)}</p><h3><button class="activity-title" data-info="${a.id}" aria-haspopup="dialog">${esc(a.name)}</button></h3><div class="chips"><span class="chip">${esc(drive(a))}</span><span class="chip">${a.setting==='indoor'?'Binnen':a.setting==='outdoor'?'Buiten':'Binnen & buiten'}</span><span class="chip">${cost(a)}</span><span class="chip">${esc(a.duration)}</span></div><p class="card-description">${esc(a.description)}</p><p class="family-tip">${esc(a.family)}</p>${a.warning?`<p class="warning">${esc(a.warning)}</p>`:''}<details><summary>Leeftijd & bezoekinformatie</summary>${details(a)}</details><div class="card-links">${link(a.url,'Officiële website ↗')}${link(route(a),'Route ↗')}</div><div class="card-bottom"><button class="button light favorite-add" data-favorite="${a.id}" aria-pressed="${fav}">${fav?'✓ Op mijn lijstje':'+ Op mijn lijstje'}</button><button class="text-button hide" data-hide="${a.id}" aria-label="${esc(a.name)} verbergen">Verbergen</button></div></div></article>`;
   }
   function render(){
     const visible=park.activities.filter(matches).sort((a,b)=>state.rain?Number(!!b.rain)-Number(!!a.rain):0);
@@ -40,7 +40,12 @@
     $('empty').hidden=visible.length>0;$('hidden-count').textContent=state.hidden.length;
     $('favorite-count').textContent=state.favorites.length;
     $('rain').setAttribute('aria-pressed',String(state.rain));$('rain-note').hidden=!state.rain;
-    renderHidden();
+    renderHidden();renderSaved();
+  }
+  function renderSaved(){
+    const selected=state.favorites.map(id=>park.activities.find(a=>a.id===id)).filter(Boolean);
+    $('saved-count').textContent=selected.length;
+    $('saved-list').innerHTML=selected.length?`<ul class="saved-grid">${selected.map(a=>{const t=types[a.category];return `<li class="saved-card" style="--activity-color:${t.color};--activity-ink:${t.ink}"><span class="saved-icon" aria-hidden="true">${a.icon}</span><div><small>${esc(t.label)} · ${esc(zones.find(z=>z[0]===a.zone)[1].slice(3))}</small><h3><button class="activity-title" data-info="${a.id}" aria-haspopup="dialog">${esc(a.name)}</button></h3><p>${esc(drive(a))} · ${esc(a.duration)}</p></div><button class="saved-remove" data-remove-favorite="${a.id}" aria-label="${esc(a.name)} uit mijn lijstje verwijderen">×</button></li>`;}).join('')}</ul>`:'<p class="saved-empty">Je lijstje is nog leeg. Kies hieronder een uitje en klik op <strong>+ Op mijn lijstje</strong>.</p>';
   }
   function renderHidden(){const hidden=park.activities.filter(a=>state.hidden.includes(a.id));$('hidden-list').innerHTML=hidden.length?hidden.map(a=>`<div class="hidden-row"><span>${a.icon} ${esc(a.name)}</span><button class="button light" data-restore="${a.id}">Terugzetten</button></div>`).join(''):'<p>Je hebt nog geen activiteiten verborgen.</p>';}
   function info(id){const a=park.activities.find(a=>a.id===id);if(!a)return;const t=types[a.category];$('activity-info').innerHTML=`<span class="info-icon" aria-hidden="true">${a.icon}</span><p class="eyebrow">${esc(t.label)} · ${esc(zones.find(z=>z[0]===a.zone)[1].slice(3))}</p><h2 id="info-title">${esc(a.name)}</h2><p class="small">${esc(a.location)}</p><p>${esc(drive(a))} · ${cost(a)} · ${esc(a.duration)}</p><p>${esc(a.description)}</p><p class="family-tip">${esc(a.family)}</p><h3>Leeftijd & bezoek</h3>${details(a)}${a.warning?`<p class="warning">${esc(a.warning)}</p>`:''}<div class="card-links">${link(a.url,'Officiële website ↗')}${link(route(a),'Route ↗')}</div>`;$('info-dialog').showModal();}
@@ -49,7 +54,8 @@
     if(b.hasAttribute('data-close')){b.closest('dialog').close();return;}
     if(b.dataset.info){info(b.dataset.info);return;}
     if(b.dataset.filter){filter=b.dataset.filter;render();document.querySelector(`[data-filter="${filter}"]`)?.focus();return;}
-    if(b.dataset.favorite){const id=b.dataset.favorite;state.favorites=state.favorites.includes(id)?state.favorites.filter(x=>x!==id):[...state.favorites,id];save();render();document.querySelector(`[data-favorite="${id}"]`)?.focus();toast(state.favorites.includes(id)?'Bewaard als favoriet':'Uit favorieten verwijderd');return;}
+    if(b.dataset.removeFavorite){state.favorites=state.favorites.filter(id=>id!==b.dataset.removeFavorite);save();render();$('favorite-shortcut').focus({preventScroll:true});toast('Uit mijn lijstje verwijderd');return;}
+    if(b.dataset.favorite){const id=b.dataset.favorite;const wasAddButton=b.classList.contains('favorite-add');state.favorites=state.favorites.includes(id)?state.favorites.filter(x=>x!==id):[...state.favorites,id];save();render();document.querySelector(`${wasAddButton?'.favorite-add':'.favorite'}[data-favorite="${id}"]`)?.focus({preventScroll:true});toast(state.favorites.includes(id)?'Toegevoegd aan Mijn lijstje · bekijk het bovenaan':'Uit mijn lijstje verwijderd');return;}
     if(b.dataset.hide){state.hidden.push(b.dataset.hide);save();render();$('hidden-button').focus();toast('Uitje verborgen. Je kunt het altijd terugzetten.');return;}
     if(b.dataset.restore){state.hidden=state.hidden.filter(id=>id!==b.dataset.restore);save();render();toast('Uitje teruggezet');}
   });
@@ -57,7 +63,7 @@
   $('rain').addEventListener('click',()=>{state.rain=!state.rain;save();render();});
   $('hidden-button').addEventListener('click',()=>$('hidden-dialog').showModal());
   $('clear-filters').addEventListener('click',()=>{filter='all';query='';$('search').value='';render();});
-  $('favorite-shortcut').addEventListener('click',()=>{filter='favorites';render();$('activiteiten').scrollIntoView();});
+  $('favorite-shortcut').addEventListener('click',()=>{$('mijn-lijstje').scrollIntoView();$('saved-title').focus({preventScroll:true});});
   $('print').addEventListener('click',()=>window.print());
   document.querySelectorAll('dialog').forEach(d=>d.addEventListener('click',event=>{if(event.target!==d)return;const r=d.getBoundingClientRect();if(event.clientX<r.left||event.clientX>r.right||event.clientY<r.top||event.clientY>r.bottom)d.close();}));
   $('hero-image').src=park.thumbnail;$('hero-image').alt='Landal Volendam aan het Markermeer';$('hero-park').textContent=park.name;

@@ -103,3 +103,7 @@ Omgeving: KidsZoo (gripsokken verplicht), Space Expo (museum; Space Train vanaf 
 Geen Keukenhof-bloementuin als herfstuitje; geen verder gelegen stedelijke musea of attracties buiten de rijtijdselectie opgenomen.
 
 Parkfoto afkomstig van de officiële EuroParcs-pagina: https://cdn-cms.bookingexperts.com/media/3624/41/optimized.jpg.
+
+## Mijn lijstje
+
+Een zichtbaar eigen lijstje boven het overzicht toont bewaarde uitjes. Het hartje en de duidelijke knop “+ Op mijn lijstje” gebruiken dezelfde favorietenopslag; eerdere favorieten verschijnen automatisch. De headerknop scrolt direct naar het lijstje. Verwijderen via kruisje; titel opent informatie. Zoek- en categoriefilters beïnvloeden dit eigen lijstje niet.

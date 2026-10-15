@@ -6,21 +6,25 @@
   <meta name="theme-color" content="#254f41">
   <meta name="description" content="Things to do voor kinderen van 4–7: Landal Volendam, het dorp en uitjes tot circa 30 minuten rijden ten noorden van Amsterdam.">
   <title>Volendam · Things to do · Even eropuit</title>
-  <link rel="stylesheet" href="styles.css?v=7">
-  <script src="data.js?v=7" defer></script>
-  <script src="volendam.js?v=7" defer></script>
+  <link rel="stylesheet" href="styles.css?v=8">
+  <script src="data.js?v=8" defer></script>
+  <script src="volendam.js?v=8" defer></script>
 </head>
 <body>
   <a class="skip" href="#activiteiten">Naar de activiteiten</a>
   <header class="header">
     <a class="brand" href="#"><span class="brand-icon" aria-hidden="true">↟</span><span>even eropuit<span class="brand-sub">kleine avonturen, grote herinneringen</span></span></a>
     <a class="current-park" href="#"><small>LANDAL</small><strong>Volendam</strong><span>Jullie uitvalsbasis</span></a>
-    <button class="text-button header-plan" id="favorite-shortcut">♡ Favorieten <span id="favorite-count">0</span></button>
+    <button class="text-button header-plan" id="favorite-shortcut">♡ Mijn lijstje <span id="favorite-count">0</span></button>
   </header>
   <main>
     <section class="hero" aria-labelledby="hero-title">
       <div class="hero-copy"><p class="eyebrow" id="hero-region">VOLENDAM & LAAG HOLLAND</p><h1 id="hero-title">Alle ruimte voor<br><em>samen op avontuur.</em></h1><p id="hero-intro">Bootjes in de haven. Koeien om de hoek. En alle tijd om samen iets leuks te ontdekken.</p><p class="hero-small">Leuke ideeën voor kinderen van 4 en 7, met genoeg tijd voor niets.</p><div class="hero-actions"><a class="button primary" href="#activiteiten">Ontdek de uitjes <span aria-hidden="true">↓</span></a><a class="button light" id="booking" target="_blank" rel="noopener">Bekijk het park ↗</a></div><div class="hero-notes"><span>☀ Kies waar je zin in hebt</span><span>♡ Voor 4 & 7 jaar</span><span>↗ Dicht bij je park</span></div></div>
       <div class="hero-photo"><img id="hero-image" alt="Landal Volendam aan het Markermeer" fetchpriority="high"><div class="photo-note"><span>↟</span><div>Hier begint jullie vakantie<small id="hero-park">Landal Volendam</small></div></div><span id="photo-credit" class="photo-credit">Foto: Landal</span></div>
+    </section>
+    <section id="mijn-lijstje" class="saved-section" aria-labelledby="saved-title">
+      <div class="section-heading"><div><p class="eyebrow">JULLIE EIGEN KEUZES</p><h2 id="saved-title" tabindex="-1">Mijn lijstje <span id="saved-count">0</span></h2><p>Klik bij een uitje op ‘+ Op mijn lijstje’ of op het hartje. Het verschijnt meteen hieronder.</p></div><a class="button light" href="#activiteiten">+ Uitjes kiezen</a></div>
+      <div id="saved-list"></div><p class="small">Automatisch bewaard in deze browser, ook na vernieuwen.</p>
     </section>
     <section id="activiteiten" class="section activities" aria-labelledby="activities-title">
       <div class="section-heading"><div><p class="eyebrow">VOLENDAM MET KINDEREN</p><h2 id="activities-title">Things to do</h2><p>Op het park, in het dorp of een stukje verder. Alle ideeën voor 4–7 jaar op één plek.</p></div><div class="overview-tools"><button id="print" class="button light">Overzicht printen</button><button id="rain" class="rain-button" aria-pressed="false">🌧️ Regenweer</button></div></div>
